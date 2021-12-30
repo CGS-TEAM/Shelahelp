@@ -62,3 +62,4 @@ wget
 youtube_search
 aiogram
 apscheduler
+parsel
