@@ -10,8 +10,9 @@ from AnkiVector.fsub import ForceSub
 from AnkiVector import pbot as rose
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, InputMediaPhoto
 from requests import get
+from pyrogram.types import Message
 
-def get_text(message: message) -> [None, str]:
+def get_text(message: Message) -> [None, str]:
     text_to_return = message.text
     if message.text is None:
         return None
