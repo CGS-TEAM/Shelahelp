@@ -4,7 +4,7 @@ from pyrogram.types import Message
 from bs4 import *
 from pyrogram import filters	
 from AnkiVector.fsub import ForceSub
-from AnkiVector.types import InlineKeyboardMarkup, InlineKeyboardButton
+from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from AnkiVector import pbot
 
 def get_text(message: Message) -> [None, str]:
