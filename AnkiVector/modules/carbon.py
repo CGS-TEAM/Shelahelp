@@ -17,7 +17,7 @@ BUTTON = InlineKeyboardMarkup(
         InlineKeyboardButton(text="Join Bot Updates 🌷", url=f"https://t.me/CGSUpdates") 
         ],
         [
-         InlineKeyboardButton(text="➕ADD TO YOUR GROUP➕", url=f"http://t.me/TheSheLaBot?startgroup=botstart") 
+         InlineKeyboardButton(text="⚬⚬ Telegraph Link ⚬⚬", url=f"{img}") 
         ]
       ]      
     )
