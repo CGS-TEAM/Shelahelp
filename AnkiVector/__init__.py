@@ -19,6 +19,9 @@ logging.basicConfig(
 
 LOGGER = logging.getLogger(__name__)
 
+basename(f)[:-3] for f in modules if isfile(f) and not f.endswith("__init__.py")
+]
+
 # if version < 3.6, stop bot.
 if sys.version_info[0] < 3 or sys.version_info[1] < 6:
     LOGGER.error(
