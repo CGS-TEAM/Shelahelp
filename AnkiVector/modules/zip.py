@@ -1,21 +1,3 @@
-# Copyright (C) 2021 Teamdaisy
-
-
-# This file is part of Daisy (Telegram Bot)
-
-# This program is free software: you can redistribute it and/or modify
-# it under the terms of the GNU Affero General Public License as
-# published by the Free Software Foundation, either version 3 of the
-# License, or (at your option) any later version.
-
-# This program is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU Affero General Public License for more details.
-
-# You should have received a copy of the GNU Affero General Public License
-# along with this program.  If not, see <http://www.gnu.org/licenses/>.
-
 import os
 import time
 import zipfile
@@ -24,8 +6,8 @@ from telethon import types
 from telethon.tl import functions
 
 from AnkiVector import TEMP_DOWNLOAD_DIRECTORY
-from AnkiVector.services.events import register
-from AnkiVector.services.telethon import tbot as client
+from AnkiVector import telethn as client
+from AnkiVector.events import register
 
 
 async def is_register_admin(chat, user):
@@ -225,3 +207,11 @@ def get_lst_of_files(input_directory, output_lst):
             return get_lst_of_files(current_file_name, output_lst)
         output_lst.append(current_file_name)
     return output_lst
+
+
+__help__ = """
+ ☉ /zip: reply to a telegram file to compress it in .zip format
+ ☉ /unzip: reply to a telegram file to decompress it from the .zip format
+"""
+
+__mod_name__ = "Zipper"
