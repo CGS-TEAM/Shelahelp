@@ -11,7 +11,7 @@ from AnkiVector import pbot as rose
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, InputMediaPhoto
 from requests import get
 
-def get_text(message: Message) -> [None, str]:
+def get_text(message: message) -> [None, str]:
     text_to_return = message.text
     if message.text is None:
         return None
