@@ -25,9 +25,9 @@ BUTTON = InlineKeyboardMarkup(
 TEXT=f"""
 Carbon create successfuly ✅✅
 
-❋ ▱▱▰▰▱▱▰▰▱▱▰▰▱▱ ❋
-Powered By : [SheLa Bot](https://t.me/TheSheLaBot)
-❋ ▱▱▰▰▱▱▰▰▱▱▰▰▱▱ ❋
+❋ ▱▱▰▰▱▱▰▰▱▱▰▰ ❋
+  Powered By : [SheLa Bot](https://t.me/TheSheLaBot)
+❋ ▱▱▰▰▱▱▰▰▱▱▰▰ ❋
 """
 
 
