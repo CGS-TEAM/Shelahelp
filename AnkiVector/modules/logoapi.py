@@ -56,12 +56,6 @@ async def logo(client, message):
                  reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("◈──✌️Pic Me🙈──◈", callback_data="picme me")
-                ],
-                [
-                    InlineKeyboardButton("◈──💁‍♂️Send Pm──◈", callback_data="picme pm")
-                ],
-                [
                     InlineKeyboardButton(
                         "••Telegraph Link••", url=f"{murl}"
                     )
