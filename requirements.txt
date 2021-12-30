@@ -60,3 +60,4 @@ requests
 wget
 youtube_search
 aiogram
+apscheduler
