@@ -16,8 +16,8 @@ def convert(speed):
 def speedtestxyz(update: Update, context: CallbackContext):
     buttons = [
         [
-            InlineKeyboardButton("Image", callback_data="speedtest_image"),
-            InlineKeyboardButton("Text", callback_data="speedtest_text"),
+            InlineKeyboardButton("Image ⚡", callback_data="speedtest_image"),
+            InlineKeyboardButton("Text⚡", callback_data="speedtest_text"),
         ]
     ]
     update.effective_message.reply_text(

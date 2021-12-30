@@ -21,8 +21,8 @@ import json
 import aiohttp
 from pyrogram import filters
 
-from TheSheLaBot.function.pluginhelpers import admins_only, get_text
-from TheSheLaBot.services.pyrogram import pbot
+from AnkiVector.function.pluginhelpers import admins_only, get_text
+from AnkiVector.services.pyrogram import pbot
 
 
 

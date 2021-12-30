@@ -6,9 +6,9 @@ import requests
 from telethon import types
 from telethon.tl import functions
 
-from SheLaBot.config import get_str_key
-from SheLaBot.events import register
-from SheLaBot import telethn as tbot
+from AnkiVector.config import get_str_key
+from AnkiVector.events import register
+from AnkiVector import telethn as tbot
 
 REM_BG_API_KEY = get_str_key("REM_BG_API_KEY", required=False)
 TEMP_DOWNLOAD_DIRECTORY = "./"

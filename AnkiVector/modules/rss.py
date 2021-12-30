@@ -12,7 +12,7 @@ import feedparser
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
 from pyrogram import filters
 
-from SheLaBot.db.mongo_helpers.rss_db import (
+from AnkiVector.db.mongo_helpers.rss_db import (
     add_rss,
     basic_check,
     del_rss,
@@ -23,8 +23,8 @@ from SheLaBot.db.mongo_helpers.rss_db import (
     overall_check,
     update_rss,
 )
-from SheLaBot.function.pluginhelpers import admins_only, edit_or_reply, get_text
-from SheLaBot.services.pyrogram import pbot
+from AnkiVector.function.pluginhelpers import admins_only, edit_or_reply, get_text
+from AnkiVector.services.pyrogram import pbot
 
 
 @pbot.on_message(filters.command("addrss") & ~filters.edited & ~filters.bot)

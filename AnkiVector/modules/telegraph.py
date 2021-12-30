@@ -3,7 +3,7 @@ import os
 from pyrogram import filters
 from telegraph import upload_file
 
-from TheSheLaBot import pbot as app
+from AnkiVector import pbot as app
 
 
 @app.on_message(filters.command("telegraph"))

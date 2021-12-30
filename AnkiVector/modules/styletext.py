@@ -257,6 +257,34 @@ linedfont = [
     "𝕪",
     "𝕫",
 ]
+shelafont = [
+    "卂",
+    "乃",
+    "匚",
+    "ᗪ",
+    "乇",
+    "千",
+    "Ꮆ",
+    "卄",
+    "丨",
+    "ﾌ",
+    "Ҝ",
+    "ㄥ",
+    "爪",
+    "几",
+    "ㄖ",
+    "卩",
+    "Ҩ",
+    "尺",
+    "丂",
+    "ㄒ",
+    "ㄩ",
+    "ᐯ",
+    "山",
+    "乂",
+    "ㄚ",
+    "乙",
+]
 
 
 @run_async
@@ -457,6 +485,34 @@ def latin(update, context):
 
 @run_async
 @typing_action
+def latin(update, context):
+    args = context.args
+    message = update.effective_message
+    string = ""
+
+    if message.reply_to_message:
+        string = message.reply_to_message.text.lower().replace(" ", "  ")
+
+    if args:
+        string = "  ".join(args).lower()
+
+    if not string:
+        message.reply_text("Usage is `/heller <text>`", parse_mode=ParseMode.MARKDOWN)
+        return
+
+    for normiecharacter in string:
+        if normiecharacter in normiefont:
+            hellercharacter = shelafont[normiefont.index(normiecharacter)]
+            string = string.replace(normiecharacter, shelacharacter)
+
+    if message.reply_to_message:
+        message.reply_to_message.reply_text(string)
+    else:
+        message.reply_text(string)
+
+
+@run_async
+@typing_action
 def lined(update, context):
     args = context.args
     message = update.effective_message
@@ -510,6 +566,7 @@ __command_list__ = ["square"]
 __command_list__ = ["fsquare"]
 __command_list__ = ["blue"]
 __command_list__ = ["latin"]
+__command_list__ = ["heller"]
 __command_list__ = ["lined"]
 __handlers__ = [WEEBIFY_HANDLER]
 __handlers__ = [BUBBLE_HANDLER]

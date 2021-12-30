@@ -1,9 +1,9 @@
 from pyrogram import filters
 
-from SheLaBot.services.pyrogram import pbot as Daisy
+from AnkiVector.services.pyrogram import pbot as shela
 
 
-@Daisy.on_message(filters.command("webshot", ["."]))
+@shela.on_message(filters.command("webshot", ["."]))
 async def webshot(clien, message):
     try:
         user = message.command[1]

@@ -241,7 +241,7 @@ def info(update: Update, context: CallbackContext):
     rep = message.reply_text("<code>Appraising...</code>", parse_mode=ParseMode.HTML)
 
     text = (
-        f"╒═══「<b> Appraisal results:</b> 」\n"
+        f"☬ <b> Appraisal results:</b> ☬\n"
         f"ID: <code>{user.id}</code>\n"
         f"First Name: {html.escape(user.first_name)}"
     )
@@ -308,7 +308,7 @@ def info(update: Update, context: CallbackContext):
 
     if disaster_level_present:
 
-        text += ' [<a href="https://t.me/SuzuyaUpdates/55">?</a>]'.format(bot.username)
+        text += ' [<a href="https://t.me/CGSUpdates">?</a>]'.format(bot.username)
 
     try:
         user_member = chat.get_member(user.id)
@@ -427,7 +427,7 @@ def stats(update: Update, context: CallbackContext):
     )
     output = process.communicate()[0]
     stats = (
-        "<b>Current stats:</b>\n"
+        "<b>♛✌✚ Current stats: @TheSheLaBot ✱✊💡</b>\n"
         + "\n"
         + output
         + "\n".join([mod.__stats__() for mod in STATS])
@@ -527,28 +527,30 @@ def __user_info__(user_id):
 
 __help__ = """
 *ID:*
- • `/id`*:* get the current group id. If used by replying to a message, gets that user's id.
- • `/gifid`*:* reply to a gif to me to tell you its file ID.
+ ☉ /id *:* get the current group id. If used by replying to a message, gets that user's id.
+ ☉ /gifid *:* reply to a gif to me to tell you its file ID.
 
 *Self addded information:* 
- • `/setme <text>`*:* will set your info
- • `/me`*:* will get your or another user's info.
+ ☉ /setme <text> *:* will set your info
+ ☉ /me *:* will get your or another user's info.
 Examples:
  `/setme I am a wolf.`
  `/me @username(defaults to yours if no user specified)`
 
 *Information others add on you:* 
- • `/bio`*:* will get your or another user's bio. This cannot be set by yourself.
-• `/setbio <text>`*:* while replying, will save another user's bio 
+ ☉/bio*:* will get your or another user's bio. This cannot be set by yourself.
+☉ /setbio <text>`*:* while replying, will save another user's bio 
 Examples:
  `/bio @username(defaults to yours if not specified).`
  `/setbio This user is a wolf` (reply to the user)
 
 *Overall Information about you:*
- • `/info`*:* get information about a user. 
+ ☉ /info *:* get information about a user. 
  
 *What is that health thingy?*
- Come and see [HP System explained](https://t.me/OnePunchUpdates/192)
+ Come and see [HP System explained](https://t.me/CGSUpdates/1552)
+ 
+ @TheSheLaBot
 """
 
 SET_BIO_HANDLER = DisableAbleCommandHandler("setbio", set_about_bio)
