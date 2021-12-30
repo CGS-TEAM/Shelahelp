@@ -75,6 +75,8 @@ if ENV:
     API_HASH = os.environ.get("API_HASH", None)
     DB_URI = os.environ.get("DATABASE_URL")
     DONATION_LINK = os.environ.get("DONATION_LINK")
+    HEROKU_APP_NAME = os.environ.get("HEROKU_APP_NAME")
+    HEROKU_API_KEY = os.environ.get("HEROKU_API_KEY")
     LOAD = os.environ.get("LOAD", "").split()
     NO_LOAD = os.environ.get("NO_LOAD", "translation").split()
     DEL_CMDS = bool(os.environ.get("DEL_CMDS", False))
