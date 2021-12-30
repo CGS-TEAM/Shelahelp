@@ -1,30 +1,11 @@
-# Copyright (C) 2021 Teamdaisyx
-
-
-# This file is part of Daisy (Telegram Bot)
-
-# This program is free software: you can redistribute it and/or modify
-# it under the terms of the GNU Affero General Public License as
-# published by the Free Software Foundation, either version 3 of the
-# License, or (at your option) any later version.
-
-# This program is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU Affero General Public License for more details.
-
-# You should have received a copy of the GNU Affero General Public License
-# along with this program.  If not, see <http://www.gnu.org/licenses/>.
-
 from asyncio import sleep
 
 from telethon import events
 from telethon.errors import ChatAdminRequiredError, UserAdminInvalidError
 from telethon.tl.functions.channels import EditBannedRequest
-from telethon.tl.types import ChatBannedRights
+from telethon.tl.types import ChannelParticipantsAdmins, ChatBannedRights
 
-from AnkiVector import OWNER_ID
-from AnkiVector.services.telethon import tbot as client
+from AnkiVector import DEMONS, DEV_USERS, DRAGONS, OWNER_ID, telethn
 
 # =================== CONSTANT ===================
 
@@ -52,41 +33,24 @@ UNBAN_RIGHTS = ChatBannedRights(
     embed_links=None,
 )
 
-OFFICERS = OWNER_ID
+OFFICERS = [OWNER_ID] + DEV_USERS + DRAGONS + DEMONS
 
 # Check if user has admin rights
-async def is_register_admin(chat, user):
-    if isinstance(chat, (types.InputPeerChannel, types.InputChannel)):
-
-        return isinstance(
-            (
-                await tbot(functions.channels.GetParticipantRequest(chat, user))
-            ).participant,
-            (types.ChannelParticipantAdmin, types.ChannelParticipantCreator),
-        )
-    if isinstance(chat, types.InputPeerChat):
-
-        ui = await tbot.get_peer_id(user)
-        ps = (
-            await tbot(functions.messages.GetFullChatRequest(chat.chat_id))
-        ).full_chat.participants.participants
-        return isinstance(
-            next((p for p in ps if p.user_id == ui), None),
-            (types.ChatParticipantAdmin, types.ChatParticipantCreator),
-        )
-    return None
+async def is_administrator(user_id: int, message):
+    admin = False
+    async for user in telethn.iter_participants(
+        message.chat_id, filter=ChannelParticipantsAdmins
+    ):
+        if user_id == user.id or user_id in OFFICERS:
+            admin = True
+            break
+    return admin
 
 
-@client.on(events.NewMessage(pattern=f"^[!/]zombies ?(.*)"))
+@telethn.on(events.NewMessage(pattern=f"^[!/]zombies ?(.*)"))
 async def zombies(event):
     """For .zombies command, list all the zombies in a chat."""
-    if event.fwd_from:
-        return
-    if event.is_group:
-        if await is_register_admin(event.input_chat, event.message.sender_id):
-            pass
-        else:
-            return
+
     con = event.pattern_match.group(1).lower()
     del_u = 0
     del_status = "No Deleted Accounts Found, Group Is Clean."
@@ -106,10 +70,17 @@ async def zombies(event):
 
     # Here laying the sanity check
     chat = await event.get_chat()
-    chat.admin_rights
-    chat.creator
+    admin = chat.admin_rights
+    creator = chat.creator
 
     # Well
+    if not await is_administrator(user_id=event.from_id, message=event):
+        await event.respond("You're Not An Admin!")
+        return
+
+    if not admin and not creator:
+        await event.respond("I Am Not An Admin Here!")
+        return
 
     cleaning_zombies = await event.respond("Cleaning Zombies...")
     del_u = 0
