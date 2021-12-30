@@ -23,8 +23,8 @@ from telethon.errors import ChatAdminRequiredError, UserAdminInvalidError
 from telethon.tl.functions.channels import EditBannedRequest
 from telethon.tl.types import ChatBannedRights
 
-from SheLaBot import OWNER_ID
-from SheLaBot.services.telethon import tbot as client
+from AnkiVector import OWNER_ID
+from AnkiVector.services.telethon import tbot as client
 
 # =================== CONSTANT ===================
 
