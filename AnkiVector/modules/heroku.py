@@ -176,12 +176,12 @@ async def restart_bot(dyno):
     if dyno.sender_id == OWNER_ID:
         pass
     else:
-        return await dyno.reply("Rosebot will be restarted..."
+        return await dyno.reply("shela will be restarted..."
          )
-    args = [sys.executable, "-m", "DewmiBot"]
+    args = [sys.executable, "-m", "AnkiVector"]
     os.execl(sys.executable, *args)
 
-@register(pattern="^/update$")
+@register(pattern="^/update(?: |$)")
 async def upgrade(dyno):
     if dyno.fwd_from:
         return
@@ -213,7 +213,7 @@ async def upgrade(dyno):
         await proc.communicate()
         
         
-@register(pattern="^/logs$")
+@register(pattern="^/logs(?: |$)")
 async def _(dyno):
     if dyno.fwd_from:
         return
