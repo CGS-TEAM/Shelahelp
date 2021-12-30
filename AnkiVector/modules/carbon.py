@@ -1,7 +1,7 @@
 from pyrogram import filters
 from io import BytesIO
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
-from AnkiVector import app, aiohttpsession as session
+from AnkiVector import pbot, aiohttpsession as session
 from AnkiVector.fsub import ForceSub
 
 async def make_carbon(code):
@@ -31,7 +31,7 @@ Powered By : [SheLa Bot](https://t.me/TheSheLaBot)
 """
 
 
-@app.on_message(filters.command(["carbon", f"carbon@TheSheLaBot"]))
+@pbot.on_message(filters.command(["carbon", f"carbon@TheSheLaBot"]))
 async def carbon_func(client, message):
     FSub = await ForceSub(client, message)
     if FSub == 400:
