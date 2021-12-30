@@ -1,6 +1,7 @@
 future
 emoji
 lxml
+heroku3
 beautifulsoup4
 aiohttp
 requests
