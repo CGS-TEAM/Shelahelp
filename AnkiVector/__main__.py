@@ -64,7 +64,7 @@ from AnkiVector.modules.helper_funcs.misc import paginate_modules
 from AnkiVector.modules.helper_funcs.readable_time import get_readable_time
 
 PM_START_TEXT = f"""
-*Hellow There, bot update reson
+hi bot update reson
 """
 
 buttons = [
@@ -73,7 +73,7 @@ buttons = [
         InlineKeyboardButton(text="Support", url="https://t.me/CGSSUPPORT"),
     ],
     [
-        InlineKeyboardButton(text="about", callback_data="aboutmanu_"),
+        InlineKeyboardButton(text="about", callback_data="about"),
         InlineKeyboardButton(text="❔ Help", callback_data="help_back"),
     ],
     [
@@ -216,10 +216,6 @@ def start(update: Update, context: CallbackContext):
                 IMPORTED["rules"].send_rules(update, args[0], from_pm=True)
 
         else:
-            update.effective_message.reply_sticker(
-                ANKIVECTOR_STICKER,
-                timeout=60,
-            )
             update.effective_message.reply_text(
                 PM_START_TEXT,
                 reply_markup=InlineKeyboardMarkup(buttons),
