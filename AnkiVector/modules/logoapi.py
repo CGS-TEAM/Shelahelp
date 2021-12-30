@@ -83,7 +83,22 @@ async def mylogo(_, query):
         await query.answer("😊Capture started....\n🤝share & support us\n@CGSsupport", show_alert=True)
         photoid = query.from_user.photo.big_file_id  
         photo = await rose.download_media(photoid)
-        await query.edit_message_media(InputMediaPhoto(media=photo, caption=caption), reply_markup=picmebtns)
+        await query.edit_message_media(InputMediaPhoto(media=photo, caption = caption.format(message.from_user.mention)),
+                 reply_markup=InlineKeyboardMarkup(
+            [
+                [
+                    InlineKeyboardButton("◈──✌️Pic Me🙈──◈", callback_data="picme me")
+                ],
+                [
+                    InlineKeyboardButton("◈──💁‍♂️Send Pm──◈", callback_data="picme pm")
+                ],
+                [
+                    InlineKeyboardButton(
+                        "••Telegraph Link••", url=f"{murl}"
+                    )
+                ],
+            ]
+          ),)
         if os.path.exists(photo):os.remove(photo)
     if mode == "pm":
         try:
