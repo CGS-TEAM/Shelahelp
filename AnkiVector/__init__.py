@@ -6,6 +6,7 @@ import time
 
 import spamwatch
 import telegram.ext as tg
+from AnkiVector import POSTGRESS_URL
 from pyrogram import Client, errors
 from telethon import TelegramClient
 from sqlalchemy import create_engine
@@ -86,7 +87,7 @@ if ENV:
     PORT = int(os.environ.get("PORT", 5000))
     CERT_PATH = os.environ.get("CERT_PATH")
     API_ID = os.environ.get("API_ID", None)
-    POSTGRESS_URL os.= environ.get("SQLALCHEMY_DATABASE_URI", None)
+    POSTGRESS_URL = os.environ.get("SQLALCHEMY_DATABASE_URI", None)
     MONGO_DB_URI = os.environ.get("MONGO_DB_URI", None)
     API_HASH = os.environ.get("API_HASH", None)
     DB_URI = os.environ.get("DATABASE_URL")
