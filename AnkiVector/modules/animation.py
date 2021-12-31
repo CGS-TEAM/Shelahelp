@@ -114,7 +114,6 @@ fuck_you = [
                
 
 
-@user_admin
 @run_async
 def bombs(update: Update, context: CallbackContext):
     bot,args = context.bot, context.args
@@ -126,7 +125,6 @@ def bombs(update: Update, context: CallbackContext):
 
 
 
-@user_admin
 @run_async
 def hack(update: Update, context: CallbackContext):
     bot, args = context.bot, context.args
@@ -140,7 +138,6 @@ def hack(update: Update, context: CallbackContext):
 
 
 
-@user_admin
 @run_async
 def love(update: Update, context: CallbackContext):
     bot, args = context.bot, context.args
@@ -154,7 +151,6 @@ def love(update: Update, context: CallbackContext):
             
             
             
-@user_admin
 @run_async
 def fuck(update: Update, context: CallbackContext):
     bot, args = context.bot, context.args
@@ -168,7 +164,6 @@ def fuck(update: Update, context: CallbackContext):
             
             
 
-@user_admin
 @run_async
 def kill(update: Update, context: CallbackContext):
     bot, args = context.bot, context.args
