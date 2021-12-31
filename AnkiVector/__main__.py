@@ -64,7 +64,17 @@ from AnkiVector.modules.helper_funcs.misc import paginate_modules
 from AnkiVector.modules.helper_funcs.readable_time import get_readable_time
 
 PM_START_TEXT = f"""
-hi bot update reson
+✨<b>Hey There i am [SheLa Bot](httsp://t.me/THESHELABOT)</b>
+
+This bot has a lot of futures An advanced telegram
+
+Group management Bot For help You Protect Your Groups & Suit For
+
+& All Your Needs. 🌷
+
+To know the latest updates on SheLa Bot, join the [Update Channel](https://t.me/CGSUpdates).🌵
+
+<b>©️ @TheSheLabot ✨</b>
 """
 
 buttons = [
