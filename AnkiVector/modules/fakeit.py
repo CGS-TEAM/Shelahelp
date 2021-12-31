@@ -28,9 +28,8 @@ async def hi(event):
     if event.fwd_from:
         return
     if event.is_group:
-        if not await is_admin(event, event.message.sender_id):
-            await event.reply("`You Should Be Admin To Do This!`")
-            return
+        if not await (event, event.message.sender_id):
+            await event.reply(
     fake = Faker()
     print("FAKE DETAILS GENERATED\n")
     name = str(fake.name())
@@ -52,7 +51,7 @@ async def hi(event):
 async def _(event):
     if event.fwd_from:
         return
-    if await is_admin(event, event.message.sender_id):
+    if await (event, event.message.sender_id):
         url = "https://thispersondoesnotexist.com/image"
         response = requests.get(url)
         if response.status_code == 200:
