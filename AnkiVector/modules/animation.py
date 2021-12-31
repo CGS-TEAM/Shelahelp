@@ -104,7 +104,7 @@ bomb_ettu = [
              "▪️▪️▪️▪️\n▪️▪️▪️▪️\n▪️▪️▪️▪️\n▪️▪️▪️▪️\n😵😵😵😵",
 ]
 
-fucked_fuck = [ 
+fuck_you = [ 
                "Search you target user like boy or girl...",
                "Searched targed user like sexy girl or boy",
                "Fuck started👩‍❤️‍👨",
@@ -156,11 +156,11 @@ def love(update: Update, context: CallbackContext):
             
 @user_admin
 @run_async
-def love(update: Update, context: CallbackContext):
+def fuck(update: Update, context: CallbackContext):
     bot, args = context.bot, context.args
     msg = update.effective_message.reply_text('Search 💦') 
     for x in range(EDIT_TIMES):
-        msg.edit_text(fucked_fuck[x%5])
+        msg.edit_text(fuck_you[x%5])
         time.sleep(EDIT_SLEEP)
     msg.edit_text('Fuckued 💦 wait 10 month ago.. 👨‍👨‍👦')
 
