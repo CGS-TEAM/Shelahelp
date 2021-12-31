@@ -202,14 +202,16 @@ LOVE_HANDLER = DisableAbleCommandHandler("love", love)
 HACK_HANDLER = DisableAbleCommandHandler("hack", hack)
 BOMBS_HANDLER = DisableAbleCommandHandler("bombs",bombs)
 FUCK_HANDLER = DisableAbleCommandHandler("fuck",fuck)
+WTF_HANDLER = DisableAbleCommandHandler("wtf",wtf)
 dispatcher.add_handler(KILL_HANDLER)
 dispatcher.add_handler(LOVE_HANDLER)
 dispatcher.add_handler(HACK_HANDLER)
 dispatcher.add_handler(BOMBS_HANDLER)
 dispatcher.add_handler(FUCK_HANDLER)
+dispatcher.add_handler(WTF_HANDLER)
 
-__command_list__ = ["love", "hack", "bombs", "kill", "fuck"]
+__command_list__ = ["love", "hack", "bombs", "kill", "fuck", "wtf"]
 
-__command_list__ = ["love", "hack", "bombs","kill", "fuck"]
+__command_list__ = ["love", "hack", "bombs","kill", "fuck", "wtf"]
     
-__handlers__ = [LOVE_HANDLER, HACK_HANDLER, BOMBS_HANDLER, KILL_HANDLER, FUCK_HANDLER]
+__handlers__ = [LOVE_HANDLER, HACK_HANDLER, BOMBS_HANDLER, KILL_HANDLER, FUCK_HANDLER, WTF_HANDLER]
