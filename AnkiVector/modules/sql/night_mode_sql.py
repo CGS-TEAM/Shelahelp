@@ -13,7 +13,7 @@
 
 from sqlalchemy import Column, String
 
-from AnkiVector.utils.sql import BASE, SESSION
+from AnkiVector import BASE, SESSION
 
 
 class Nightmode(BASE):
