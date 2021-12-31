@@ -19,7 +19,7 @@ import sys
 import yaml
 from envparse import env
 
-from SheLaBot.utils.logger import log
+from AnkiVector.utils.logger import log
 
 DEFAULTS = {
     "LOAD_MODULES": True,
