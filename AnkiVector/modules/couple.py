@@ -23,7 +23,7 @@ from datetime import datetime
 from pyrogram import filters
 
 from AnkiVector import pbot
-from AnkiVector.utils.dbfun import get_couple, save_couple
+from AnkiVector.utils.fundb import get_couple, save_couple
 
 # Date and time
 def dt():
