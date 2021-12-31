@@ -46,4 +46,4 @@ __help__ = """
 
 @TheSheLaBot
 """
-__mod_name__ = "ᴄʀɪᴄᴋᴇᴛ🏏"
+__mod_name__ = "C-score"
