@@ -1,66 +1,213 @@
-#    Copyright (C) @chsaiujwal 2020-2021
-#    Edited by TeamSheLaBot
-#    This program is free software: you can redistribute it and/or modify
-#    it under the terms of the GNU Affero General Public License as published by
-#    the Free Software Foundation, either version 3 of the License, or
-#
-#    This program is distributed in the hope that it will be useful,
-#    but WITHOUT ANY WARRANTY; without even the implied warranty of
-#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#    GNU Affero General Public License for more details.
-#
-#    You should have received a copy of the GNU Affero General Public License
-#    along with this program.  If not, see <https://www.gnu.org/licenses/>.
+#!/usr/bin/env python
 
-import os
+# -*- coding: utf-8 -*-
+
+import logging
+
+from typing import Dict
 
 import requests
-from faker import Faker
-from faker.providers import internet
-from telethon import events
 
-from AnkiVector.utils.telethonbasics import is_admin
-from AnkiVector.utils.telethon import tbot
+from telegram import ReplyKeyboardMarkup, Update
 
+from telegram.ext import (CallbackContext, CommandHandler, ConversationHandler,
 
-@tbot.on(events.NewMessage(pattern="/fakegen$"))
-async def hi(event):
-    if event.fwd_from:
-        return
-    if event.is_group:
-        if not await (event, event.message.sender_id):
-            await event.reply("Error request error with @CGSSUPPORT")
-            return
-    fake = Faker()
-    print("FAKE DETAILS GENERATED\n")
-    name = str(fake.name())
-    fake.add_provider(internet)
-    address = str(fake.address())
-    ip = fake.ipv4_private()
-    cc = fake.credit_card_full()
-    email = fake.ascii_free_email()
-    job = fake.job()
-    android = fake.android_platform_token()
-    pc = fake.chrome()
-    await event.reply(
-        f"<b><u> Fake Information Generated</b></u>\n<b>Name :-</b><code>{name}</code>\n\n<b>Address:-</b><code>{address}</code>\n\n<b>IP ADDRESS:-</b><code>{ip}</code>\n\n<b>credit card:-</b><code>{cc}</code>\n\n<b>Email Id:-</b><code>{email}</code>\n\n<b>Job:-</b><code>{job}</code>\n\n<b>android user agent:-</b><code>{android}</code>\n\n<b>Pc user agent:-</b><code>{pc}</code>",
-        parse_mode="HTML",
+                          Filters, MessageHandler, Updater)
+
+# Enable logging
+
+logging.basicConfig(
+
+    format="%(asctime)s - %(name)s - %(levelname)s - %(message)s", level=logging.INFO
+
+)
+
+logger = logging.getLogger(__name__)
+
+CHOOSING, TYPING_REPLY, TYPING_CHOICE = range(3)
+
+reply_keyboard = [
+
+    ["Fake Address Generator", "hdh"],
+
+    ["About", "Support"],
+
+]
+
+markup = ReplyKeyboardMarkup(reply_keyboard, one_time_keyboard=True)
+
+def start(update: Update, context: CallbackContext) -> int:
+
+    update.message.reply_text(
+
+        "Hi! My name is Doctor Botter. I will hold a more complex conversation with you. "
+
+        "Why don't you tell me something about yourself?",
+
+        reply_markup=markup,
+
     )
 
+    return CHOOSING
 
-@tbot.on(events.NewMessage(pattern="/picgen$"))
-async def _(event):
-    if event.fwd_from:
-        return
-    if await (event, event.message.sender_id):
-        url = "https://thispersondoesnotexist.com/image"
-        response = requests.get(url)
-        if response.status_code == 200:
-            with open("FRIDAYOT.jpg", "wb") as f:
-                f.write(response.content)
+def fakeaddress(update: Update, context: CallbackContext) -> int:
 
-        captin = f"Fake Image powered by @CGSUPDATES."
-        fole = "FRIDAYOT.jpg"
-        await tbot.send_file(event.chat_id, fole, caption=captin)
-        await event.delete()
-        os.system("rm ./FRIDAYOT.jpg ")
+    """Send a Fake Address /fake is issued."""
+
+    url = f"https://randomuser.me/api/"
+
+    response = requests.get(url).json()
+
+    gender = response["results"][0]["gender"]
+
+    name = response["results"][0]["name"]
+
+    location = response["results"][0]["location"]
+
+    birthday = response["results"][0]["dob"]
+
+    if gender == "male":
+
+        try:
+
+            message = f"""
+
+            Name 🙋‍♂️ : {name['title']}.{name['first']} {name['last']}
+
+            Address 👇
+
+            Street 🛣 : {location['street']['number']} {location['street']['name']}
+
+            City 🌆 : {location['city']}
+
+            State 🚏 : {location['state']}
+
+            Country 🏜: {location['country']}
+
+            Post Code 📮 : {location['postcode']}
+
+            Contact 👇  
+
+            Email 📧 : {response['results'][0]['email']}
+
+            Phone 📱 : {response['results'][0]['phone']}
+
+            Age 👇
+
+            Birthday 🎂 : {birthday['date']}
+
+            """
+
+        except:
+
+            pass
+
+    elif gender == "female":
+
+        try:
+
+            message = f"""
+
+            Name 🙋‍♀️ : {name['title']}.{name['first']} {name['last']}
+
+            Address 👇
+
+            Street 🛣 : {location['street']['number']} {location['street']['name']}
+
+            City 🌆 : {location['city']}
+
+            State 🚏 : {location['state']}
+
+            Country 🏜: {location['country']}
+
+            Post Code 📮 : {location['postcode']}
+
+            Contact 👇
+
+            Email 📧 : {response['results'][0]['email']}
+
+            Phone 📱 : {response['results'][0]['phone']}
+
+            Age 👇
+
+            Birthday 🎂 : {birthday['date']}
+
+            """
+
+        except:
+
+            pass
+
+    update.message.reply_text(message)
+
+def githubpage(update: Update, context: CallbackContext) -> int:
+
+    update.message.reply_text(
+
+        "You can support me on telegram,\nhttps://t.me/cgsupdates"
+
+    )
+
+def githubrepo(update: Update, context: CallbackContext) -> int:
+
+    update.message.reply_text(
+
+        "This is repositorie for fake address generator,\nhttps://github.com/Epic-R-R/Fake-Address-Generator"
+
+    )
+
+def About(update: Update, context: CallbackContext) -> int:
+
+    update.message.reply_text(
+
+        "Hi there 👋🏻\nWorking hard and fix bug and build tools and software - Epic-R-R"
+
+    )
+
+def main() -> None:
+
+    # Create the Updater and pass it your bot's token.
+
+    # Make sure to set use_context=True to use the new context based callbacks
+
+    # Post version 12 this will no longer be necessary
+
+    updater = Updater("TOKEN", use_context=True)
+
+    # Get the dispatcher to register handlers
+
+    dispatcher = updater.dispatcher
+
+    # Add conversation handler with the states CHOOSING, TYPING_CHOICE and TYPING_REPLY
+
+    conv_handler = ConversationHandler(
+
+        entry_points=[CommandHandler("start", start)],
+
+        states={
+
+            CHOOSING: [
+
+                MessageHandler(
+
+                    Filters.regex("^Fake Address Generator$"),
+
+                    fakeaddress,
+
+                ),
+
+                MessageHandler(Filters.regex("^Support$"), githubpage),
+
+                MessageHandler(Filters.regex("^Github Repo"), githubrepo),
+
+                MessageHandler(Filters.regex("^About"), About),
+
+            ],
+
+        },
+
+        fallbacks=[],
+
+    )
+
+    dispatcher.add_handler(conv_handler)
