@@ -11,7 +11,7 @@ import os
 import requests
 from pyrogram import filters
 
-from SheLaBot.utils.pluginhelpers import edit_or_reply, get_text
+from AnkiVector.utils.pluginhelpers import edit_or_reply, get_text
 from AnkiVector import pbot
 
 
