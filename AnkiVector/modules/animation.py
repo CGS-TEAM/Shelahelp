@@ -113,6 +113,7 @@ fuck_you = [
                "👉👌 💦",
 ]               
 
+STICKER ="CAACAgIAAx0CVghH8gACoTNhzripu1pZ3WYu6XVYJhhz-2Og-gACTwADQbVWDFXQiMru6_6YIwQ"
 
 
 @run_async
@@ -173,6 +174,17 @@ def kill(update: Update, context: CallbackContext):
         msg.edit_text(kill_you[x%12])
         time.sleep(EDIT_SLEEP)
     msg.edit_text('⚰')
+
+
+
+
+@run_async
+def wtf(update: Update, context: CallbackContext):
+    bot, args = context.bot, context.args
+    msg = update.effective_message.reply_sticker(
+              STICKER,
+          )      
+
 
 __help__ = """
  ☉ /kill
