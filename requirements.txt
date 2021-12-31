@@ -66,3 +66,5 @@ youtube_search
 aiogram
 apscheduler
 parsel
+faker
+loguru
