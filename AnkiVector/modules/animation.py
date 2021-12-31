@@ -43,6 +43,9 @@ EDIT_SLEEP = 1
 EDIT_TIMES = 12
 
 
+EDIT_SLEEP = 1
+EDIT_TIMES = 7
+
 
 
 
@@ -101,7 +104,14 @@ bomb_ettu = [
              "▪️▪️▪️▪️\n▪️▪️▪️▪️\n▪️▪️▪️▪️\n▪️▪️▪️▪️\n😵😵😵😵",
 ]
 
-
+fucked_fuck = [ 
+               "Search you target user like boy or girl...",
+               "Searched targed user like sexy girl or boy",
+               "Fuck started👩‍❤️‍👨",
+               "👉      👌",
+               "👉  👌",
+               "👉👌 💦",
+               
 
 
 @user_admin
@@ -141,7 +151,22 @@ def love(update: Update, context: CallbackContext):
     msg.edit_text('True Love💞')
 
 
+            
+            
+            
+@user_admin
+@run_async
+def love(update: Update, context: CallbackContext):
+    bot, args = context.bot, context.args
+    msg = update.effective_message.reply_text('Search 💦') 
+    for x in range(EDIT_TIMES):
+        msg.edit_text(fucked_fuck[x%5])
+        time.sleep(EDIT_SLEEP)
+    msg.edit_text('Fuckued 💦 wait 10 month ago.. 👨‍👨‍👦')
 
+            
+            
+            
 
 @user_admin
 @run_async
@@ -167,13 +192,15 @@ KILL_HANDLER = DisableAbleCommandHandler("kill",kill)
 LOVE_HANDLER = DisableAbleCommandHandler("love", love)
 HACK_HANDLER = DisableAbleCommandHandler("hack", hack)
 BOMBS_HANDLER = DisableAbleCommandHandler("bombs",bombs)
+FUCK_HANDLER = DisableAbleCommandHandler("fuck",fuck)
 dispatcher.add_handler(KILL_HANDLER)
 dispatcher.add_handler(LOVE_HANDLER)
 dispatcher.add_handler(HACK_HANDLER)
 dispatcher.add_handler(BOMBS_HANDLER)
+dispatcher.add_handler(FUCK_HANDLER)
 
-__command_list__ = ["love", "hack", "bombs", "kill"]
+__command_list__ = ["love", "hack", "bombs", "kill", "fuck"]
 
-__command_list__ = ["love", "hack", "bombs","kill"]
+__command_list__ = ["love", "hack", "bombs","kill", "fuck"]
     
-__handlers__ = [LOVE_HANDLER, HACK_HANDLER, BOMBS_HANDLER, KILL_HANDLER]
+__handlers__ = [LOVE_HANDLER, HACK_HANDLER, BOMBS_HANDLER, KILL_HANDLER, FUCK_HANDLER]
