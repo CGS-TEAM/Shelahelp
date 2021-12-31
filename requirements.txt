@@ -68,3 +68,4 @@ apscheduler
 parsel
 faker
 loguru
+envparse
