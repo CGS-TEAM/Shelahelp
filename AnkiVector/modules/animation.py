@@ -127,6 +127,8 @@ def bombs(update: Update, context: CallbackContext):
 
 
 
+
+@user_admin
 @run_async
 def hack(update: Update, context: CallbackContext):
     bot, args = context.bot, context.args
