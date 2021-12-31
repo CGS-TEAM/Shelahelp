@@ -156,7 +156,7 @@ def fuck(update: Update, context: CallbackContext):
     bot, args = context.bot, context.args
     msg = update.effective_message.reply_text('Search 💦') 
     for x in range(EDIT_TIMES):
-        msg.edit_text(fuck_you[x%5])
+        msg.edit_text(fuck_you[x%9])
         time.sleep(EDIT_SLEEP)
     msg.edit_text('Fuckued 💦 wait 10 month ago.. 👨‍👨‍👦')
 
@@ -179,6 +179,7 @@ __help__ = """
  ☉ /bombs
  ☉ /hack
  ☉ /love
+ ☉ /fuck
  
  @TheSheLaBot
 """
