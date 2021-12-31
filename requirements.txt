@@ -33,7 +33,8 @@ pyrate-limiter
 cachetools
 pyrogram>=1.0.7
 tgCrypto>=1.2.2
-pymongo
+pymongo==3.11.0
+pygments
 fontTools
 gtts
 telegraph
