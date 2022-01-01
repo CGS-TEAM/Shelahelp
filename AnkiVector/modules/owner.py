@@ -7,7 +7,7 @@ OWNER_TEXT = """
 *Oh 😉*
 """
 
-@pbot.on_message(filters.regex(@kmsrk) & ~filters.private)
+@pbot.on_message(filters.regex("@kmsrk") & ~filters.private)
 async def owner(client, message):
     else:
     await message.reply_text(
