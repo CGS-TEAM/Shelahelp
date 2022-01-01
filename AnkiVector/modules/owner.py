@@ -8,6 +8,6 @@ OWNER_TEXT = """
 """
 
 @pbot.on_message(filters.regex("@kmsrk") & ~filters.private)
-async def owner(client, message):
+async def owner(_, message: Message):
     await message.reply_text(
                     caption=OWNER_TEXT)
