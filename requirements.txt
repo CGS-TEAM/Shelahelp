@@ -1,7 +1,6 @@
 future
 emoji
 lxml
-inspect
 Python_ARQ
 heroku3
 beautifulsoup4
