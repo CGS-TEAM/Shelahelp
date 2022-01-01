@@ -6,7 +6,7 @@ from functools import wraps
 
 from pyrogram.errors.exceptions.forbidden_403 import ChatWriteForbidden
 
-from AnkiVector import EVENT_LOGS, app
+from AnkiVector import EVENT_LOGS, pbot
 
 
 def split_limits(text):
