@@ -14,7 +14,6 @@ spongemock
 zalgo-text
 geopy
 nltk
-github
 psutil
 dnspython
 aiohttp>=2.2.5
