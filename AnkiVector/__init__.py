@@ -83,6 +83,8 @@ if ENV:
     PORT = int(os.environ.get("PORT", 5000))
     CERT_PATH = os.environ.get("CERT_PATH")
     API_ID = os.environ.get("API_ID", None)
+    SESSION_STRING = os.environ.get("SESSION_STRING", None)
+    STRING_SESSION = os.environ.get("STRING_SESSION", None)
     POSTGRESS_URL = os.environ.get("SQLALCHEMY_DATABASE_URI", None)
     MONGO_DB_URI = os.environ.get("MONGO_DB_URI", None)
     API_HASH = os.environ.get("API_HASH", None)
