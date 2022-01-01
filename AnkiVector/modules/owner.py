@@ -1,14 +1,7 @@
-import os
-import asyncio
-from pyrogram import Client, filters
-from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
-from AnkiVector import pbot
+from datetime import datetime, timedelta
+from pyrogram import Client, filters, InlineKeyboardMarkup, InlineKeyboardButton
 
-
-@pbot.on_message(filters.text
-                   & filters.group
-                   & ~filters.edited
-                   & filters.regex(@kmsrk))
-async def ytdl_with_button(_, message: Message):
-    await message.reply_text(
-        "**Oh 😉 **",
+@Client.on_message(filters.regex(@kmsrk))
+async def ytdl(_, message):
+    await message.reply_text(f"*Oh 😉")
+            
