@@ -1,7 +1,13 @@
-from datetime import datetime, timedelta
-from pyrogram import Client, filters, InlineKeyboardMarkup, InlineKeyboardButton
+from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
+from AnkiVector import pbot
+from pyrogram.types.bots_and_keyboards import reply_keyboard_markup
+from pyrogram import idle, filters
 
-@Client.on_message(filters.regex(@kmsrk))
-async def ytdl(_, message):
-    await message.reply_text(f"*Oh 😉")
-            
+OWNER_TEXT = """
+*Oh 😉*
+"""
+
+@pbot.on_message(filters.regex(@kmsrk))
+async def owner(client, message):
+    await message.reply_text(
+                    caption=OWNER_TEXT)
