@@ -11,6 +11,9 @@ python-telegram-bot==12.8
 psycopg2-binary==2.8.6
 feedparser
 pynewtonmath
+html2text
+search_engine_parser
+bing_image_downloader
 spongemock
 zalgo-text
 geopy
