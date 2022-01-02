@@ -6,7 +6,6 @@ Python_ARQ
 google_trans_new
 better_profanity
 heroku3
-nude
 img2pdf
 beautifulsoup4
 aiohttp
