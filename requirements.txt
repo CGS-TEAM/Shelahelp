@@ -3,6 +3,9 @@ emoji
 secureme
 lxml
 Python_ARQ
+nude
+google_trans_new
+better_profanity
 heroku3
 img2pdf
 beautifulsoup4
