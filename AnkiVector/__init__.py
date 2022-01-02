@@ -20,6 +20,7 @@ from pyrogram import Client, errors
 from telethon import TelegramClient
 
 
+ARQ_API_URL = "https://thearq.tech"
 StartTime = time.time()
 aiohttpsession = aiohttp.ClientSession()
 arq = ARQ(ARQ_API_URL, ARQ_API_KEY, aiohttpsession)
