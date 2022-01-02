@@ -23,7 +23,6 @@ from telethon import TelegramClient
 
 StartTime = time.time()
 aiohttpsession = aiohttp.ClientSession()
-arq = ARQ(https://thearq.tech, ARQ_API_KEY, aiohttpsession)
 
 # enable logging
 logging.basicConfig(
