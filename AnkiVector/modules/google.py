@@ -207,7 +207,7 @@ async def scam(results, lim):
     return imglinks
 
 
-@register(pattern="^/app (.*)")
+@register(pattern="^/apps (.*)")
 async def apk(e):
 
     try:
