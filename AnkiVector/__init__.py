@@ -22,6 +22,7 @@ from telethon import TelegramClient
 
 StartTime = time.time()
 aiohttpsession = aiohttp.ClientSession()
+arq = ARQ(ARQ_API_URL, ARQ_API_KEY, aiohttpsession)
 
 # enable logging
 logging.basicConfig(
@@ -113,6 +114,9 @@ if ENV:
     IBM_WATSON_CRED_PASSWORD = os.environ.get("IBM_WATSON_CRED_PASSWORD", None)
     TEMP_DOWNLOAD_DIRECTORY = os.environ.get("TEMP_DOWNLOAD_DIRECTORY", "./")
     uchannel = os.environ.get("uchannel", "CGSUpdates")
+    ARQ_API_URL = "https://thearq.tech"
+    ARQ_API_KEY = os.environ.get("ARQ_API", None)
+ 
 
 	
     try:
