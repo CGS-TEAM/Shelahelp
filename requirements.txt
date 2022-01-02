@@ -1,5 +1,6 @@
 future
 emoji
+secureme
 lxml
 Python_ARQ
 heroku3
