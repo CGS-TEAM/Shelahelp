@@ -54,7 +54,7 @@ async def convert(
 
     for img_path in documents:
         img = Image.open(img_path).convert("RGB")
-        img.save(img_path, "JPEG", "png", "jpg", quality=100)
+        img.save(img_path, quality=100)
 
     pdf = BytesIO(img2pdf.convert(documents))
     pdf.name = "NaoRobot.pdf"
