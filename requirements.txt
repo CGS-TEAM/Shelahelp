@@ -3,6 +3,7 @@ emoji
 lxml
 Python_ARQ
 heroku3
+img2pdf
 beautifulsoup4
 aiohttp
 requests
