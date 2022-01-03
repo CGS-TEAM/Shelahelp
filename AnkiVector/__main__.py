@@ -401,9 +401,12 @@ def AnkiVector_about_callback(update, context):
                         InlineKeyboardButton(
                             text="Admins", callback_data="aboutmanu_permis"
                         ),
-                        InlineKeyboardButton(text="Help", callback_data="help_back"),
+                        InlineKeyboardButton(
+                            text="Credits", url=""),
                     ],
-                    [InlineKeyboardButton(text="Back", callback_data="aboutmanu_")],
+                    [InlineKeyboardButton(text="Help & Commands🌷", callback_data="help_back"),
+                    ],
+                    [InlineKeyboardButton(text="Back", callback_data="aboutmanu_back")],
                 ]
             ),
         )
