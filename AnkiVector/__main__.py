@@ -108,8 +108,7 @@ HELP_STRINGS = f"""
 
 
 DONATE_STRING = """Heya, glad to hear you want to donate!
-You can donate to the original writer's of the Base code,
-Support them  [Damantha Jasinghe](t.me/Damantha_Jasinghe)"""
+You can donate to the [sadew rukshan](https://t.me/kmsrk)"""
 
 IMPORTED = {}
 MIGRATEABLE = []
@@ -402,10 +401,8 @@ def AnkiVector_about_callback(update, context):
                             text="Admins", callback_data="aboutmanu_permis"
                         ),
                         InlineKeyboardButton(
-                            text="Credits", url=""),
-                    ],
-                    [InlineKeyboardButton(text="Help & Commands🌷", callback_data="help_back"),
-                    ],
+                            text="Credits", url="")],
+                    [InlineKeyboardButton(text="Help & Commands🌷", callback_data="help_back")],
                     [InlineKeyboardButton(text="Back", callback_data="aboutmanu_back")],
                 ]
             ),
