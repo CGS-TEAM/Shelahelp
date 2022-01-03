@@ -119,7 +119,7 @@ Join SheLa [Update channel📢](https://t.me/CGSUpdates) to get information on a
 MENU = [
     [
         InlineKeyboardButton(
-            text=" Main menu✨ ", callback_data="aboutmanu_sback"),
+            text=" Main menu✨ ", callback_data="aboutmanu_back"),
     ],
     [
         InlineKeyboardButton(text=" Bot updates 📢", url=f"https://t.me/cgsupdates"),
@@ -411,7 +411,7 @@ def DewmiBot_about_callback(update, context):
                 ]
             ),
         )
-    elif query.data == "aboutmanu_sback":
+    elif query.data == "aboutmanu_back":
         query.message.edit_text(
                 PM_START_TEXT,
                 reply_markup=InlineKeyboardMarkup(BUTTONS),
@@ -502,7 +502,7 @@ def DewmiBot_about_callback(update, context):
             reply_markup=InlineKeyboardMarkup(
                 [
                  [
-                    InlineKeyboardButton(text="wbb", url="https://github.com/hamkercat"),
+                    InlineKeyboardButton(text="william bichchar", url="https://github.com/TheHamkerCat/WilliamButcherBot"),
                     InlineKeyboardButton(text="Aniki victor bot", url="https://github.com/damamtha126"),
                  ],
                  [
