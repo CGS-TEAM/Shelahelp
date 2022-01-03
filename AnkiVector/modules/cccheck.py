@@ -23,7 +23,7 @@ from telethon.tl import functions, types
 
 from AnkiVector.events import register
 from AnkiVector.utils.telethon import tbot
-from AnkiVector import ubot
+from AnkiVector import ubot2 as ubot
 
 
 async def is_register_admin(chat, user):
