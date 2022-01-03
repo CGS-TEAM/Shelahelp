@@ -255,12 +255,13 @@ def start(update: Update, context: CallbackContext):
             )
     else:
         update.effective_message.reply_text(
-            " I'm online!!😊\n<b>Up since:</b> <code>{}</code>😝".format(
+            " I'm online!🌷🌷\n<b>Up since:</b> <code>{}</code>⚡⚡".format(
                 uptime
             ),
             parse_mode=ParseMode.HTML,
             reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="Updates", url ="https://t.me/cgsupdates")]],
+                [[InlineKeyboardButton(text="SheLa UPDATES", url ="https://t.me/cgsupdates")]
+                 [InlineKeyboardButton(text="System Stats ⚡", url ="stats_callback")] ],
             ),
         )
     
@@ -504,10 +505,6 @@ def DewmiBot_about_callback(update, context):
                  [
                     InlineKeyboardButton(text="william bichchar", url="https://github.com/TheHamkerCat/WilliamButcherBot"),
                     InlineKeyboardButton(text="Aniki victor bot", url="https://github.com/damamtha126"),
-                 ],
-                 [
-                    InlineKeyboardButton(text="Uvindu bro", url="https://github.com/UvinduBro"),
-                    InlineKeyboardButton(text="stream_Music", url="https://github.com/TeamDaisyX"),
                  ],
                  [
                     InlineKeyboardButton(text="Daisyx bot", url="https://github.com/TeamDaisyX/Daisy-OLD"),
