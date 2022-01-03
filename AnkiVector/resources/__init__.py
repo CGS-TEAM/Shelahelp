@@ -4,7 +4,7 @@
 
 import logging
 
-from config import API_HASH, API_ID, BOT_TOKEN
+from AnkiVector import API_HASH, API_ID, BOT_TOKEN
 
 from pyrogram import Client
 
