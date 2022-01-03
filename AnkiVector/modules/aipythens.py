@@ -13,7 +13,7 @@ from pyrogram import filters
 
 from AnkiVector import BOT_ID
 from AnkiVector.utils.aichat import add_chat, get_session, remove_chat
-from AnkiVector.utils.pluginshelpers import admins_only, edit_or_reply
+from AnkiVector.utils.pluginhelpers import admins_only, edit_or_reply
 from AnkiVector import pbot as layla
 
 translator = google_translator()
