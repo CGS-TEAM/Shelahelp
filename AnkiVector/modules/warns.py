@@ -14,7 +14,7 @@ from AnkiVector.modules.helper_funcs.chat_status import (
     user_admin_no_reply,
     can_delete,
 )
-from LaylaRobot.modules.helper_funcs.extraction import (
+from AnkiVector.modules.helper_funcs.extraction import (
     extract_text,
     extract_user,
     extract_user_and_text,
