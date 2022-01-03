@@ -240,6 +240,11 @@ def start(update: Update, context: CallbackContext):
                 uptime
             ),
             parse_mode=ParseMode.HTML,
+            reply_markup=InlineKeyboardMarkup(
+                    [[InlineKeyboardButton(text="UPDATES ✨", callback_data="https://t.me/cgsupdates")],
+                     [InlineKeyboardButton(text="Stats 🖥️", callback_data="stats_callback")]]
+                ),
+            )
         )
 
 
