@@ -37,7 +37,7 @@ from telegram.ext import (
 from telegram.ext.dispatcher import DispatcherHandlerStop, run_async
 from telegram.utils.helpers import escape_markdown
 
-from DewmiBot import (
+from AnkiVector import (
     ALLOW_EXCL,
     BL_CHATS,
     CERT_PATH,
@@ -152,7 +152,7 @@ USER_SETTINGS = {}
 GDPR = []
 
 for module_name in ALL_MODULES:
-    imported_module = importlib.import_module("DewmiBot.modules." + module_name)
+    imported_module = importlib.import_module("AnkiVector.modules." + module_name)
     if not hasattr(imported_module, "__mod_name__"):
         imported_module.__mod_name__ = imported_module.__name__
 
