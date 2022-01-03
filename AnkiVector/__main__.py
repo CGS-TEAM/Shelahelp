@@ -79,7 +79,7 @@ buttons = [
         InlineKeyboardButton(text="Support", url="https://t.me/CGSSUPPORT"),
     ],
     [
-        InlineKeyboardButton(text="about", callback_data="about"),
+        InlineKeyboardButton(text="about", callback_data="aboutmanu_howto"),
         InlineKeyboardButton(text="❔ Help", callback_data="help_back"),
     ],
     [
@@ -391,7 +391,7 @@ def AnkiVector_about_callback(update, context):
         query.message.edit_text(
             text=f"* ｢ BASIC HELP 」*"
             f"\nIf You Can Also Add {dispatcher.bot.first_name} To Your Chats By Clicking [Here](http://t.me/{dispatcher.bot.username}?startgroup=true) And Selecting Chat. \n"
-            f"\n\nYou Can get support {dispatcher.bot.first_name} by joining [Anki Vectr Support](https://t.me/AnkiSupport_Official).\n"
+            f"\n\nYou Can get support {dispatcher.bot.first_name} by joining [CGS OFFICIAL](https://t.me/CGSSUPPORT).\n"
             f"",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
