@@ -10,14 +10,14 @@ import time
 import psutil
 from pyrogram import filters
 
-from AnkiVector import bot_start_time
+from AnkiVector import StartTime
 from AnkiVector.utils import formatter
 
 # Stats Module
 
 
 async def bot_sys_stats():
-    bot_uptime = int(time.time() - bot_start_time)
+    bot_uptime = int(time.time() - StartTime)
     cpu = psutil.cpu_percent()
     mem = psutil.virtual_memory().percent
     disk = psutil.disk_usage("/").percent
