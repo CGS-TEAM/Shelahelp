@@ -75,16 +75,21 @@ To know the latest updates on SheLa Bot, join the [Update Channel](https://t.me/
 
 buttons = [
     [
-        InlineKeyboardButton(text="Updates", url="https://t.me/CGSUPDATES"),
-        InlineKeyboardButton(text="Support", url="https://t.me/CGSSUPPORT"),
+        InlineKeyboardButton(
+            text="Help & Commands ⁉️", callback_data="help_back"
+        ),
     ],
     [
-        InlineKeyboardButton(text="about", callback_data="aboutmanu_howto"),
-        InlineKeyboardButton(text="❔ Help", callback_data="help_back"),
+        InlineKeyboardButton(text="Updates 📢", url="https://t.me/CGSUPDATES"),
+        InlineKeyboardButton(text="Support 💬", url="https://t.me/CGSSUPPORT"),
+    ],
+    [
+        InlineKeyboardButton(text="About📚", callback_data="aboutmanu_howto"),
+        InlineKeyboardButton(text="Stats🖥️", callback_data="stats_callback"),
     ],
     [
         InlineKeyboardButton(
-            text="➕ Add Anki Vector To Youre Group ➕", url="t.me/TheAnkiVectorbot?startgroup=true"
+            text="➕ Add SheLa To Youre Group ➕", url="t.me/Theshelabot?startgroup=true"
         ),
     ],
 ]
@@ -493,6 +498,11 @@ def AnkiVector_about_callback(update, context):
             ),
         )
 
+@pbot.on_callback_query(filters.regex("stats_callback"))
+async def stats_callbacc(_, CallbackQuery):
+    text = await bot_sys_stats()
+    await pbot.answer_callback_query(CallbackQuery.id, text, show_alert=True)        
+        
 
 @run_async
 @typing_action
