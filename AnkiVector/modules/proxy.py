@@ -27,7 +27,8 @@ from asyncio import get_event_loop, sleep
 from pyrogram import filters
 from pyrogram.types import CallbackQuery, Message
 
-from AnkiVector import pbot, arq
+from AnkiVector import pbot
+from AnkiVector.resources import arq
 from AnkiVector.utils.keyboard import ikb
 
 __MODULE__ = "Proxy"
