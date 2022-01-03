@@ -423,6 +423,13 @@ def DewmiBot_about_callback(update, context):
                 parse_mode=ParseMode.MARKDOWN,
                 timeout=60,
         )
+        
+     elif query.data == "shela_back":
+        query.message.edit_text(
+                TEXT,
+                reply_markup=InlineKeyboardMarkup(MENU),
+                parse_mode=ParseMode.MARKDOWN,
+        )   
 
     elif query.data == "aboutmanu_howto":
         query.message.edit_text(
@@ -452,35 +459,7 @@ def DewmiBot_about_callback(update, context):
             ),
         )
         
-    elif query.data == "shela_back":
-        query.message.edit_text(
-            text=f"✨*Hey There i am SheLa Bot*
-            f"/n/nThis bot has a lot of futures An advanced telegram. Group management Bot For help You Protect Your Groups & Suit For & All Your Needs. 🌷
-            f"/n/nTo know the latest updates on SheLa Bot, join the [Update Channel](https://t.me/CGSUpdates).🌵
-            f"/n/n*©️ @TheSheLabot *✨
-            parse_mode=ParseMode.MARKDOWN,
-            disable_web_page_preview=True,
-            reply_markup=InlineKeyboardMarkup(
-                [
-                 [
-                    InlineKeyboardButton(text="Main Menu ✨", callback_data="aboutmanu_credit"),
-                 ],
-                 [
-                    InlineKeyboardButton(text=" Bot updates 📢", url=f"https://t.me/cgsupdates"),
-                    InlineKeyboardButton(
-                        text="Support chat 💬", url=f"https://t.me/cgssupport"),
-                 ],
-                 [
-                    InlineKeyboardButton(
-                        text="System Stats", callback_data="stats_callback"),
-                 ],
-                 [
-                    InlineKeyboardButton(
-                        text="📜ADD ME TO YOUR GROUP🗞", url="http://t.me/TheSheLabot?startgroup=true"),
-                 ]
-                ]
-            ),
-        )
+    
     elif query.data == "aboutmanu_credit":
         query.message.edit_text(
             text=f"*Let's make your group bot effective now*"
