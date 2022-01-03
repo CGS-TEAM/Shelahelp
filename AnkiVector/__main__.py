@@ -245,7 +245,6 @@ def start(update: Update, context: CallbackContext):
                      [InlineKeyboardButton(text="Stats 🖥️", callback_data="stats_callback")]]
                 ),
             )
-        )
 
 
 def error_handler(update, context):
