@@ -65,12 +65,16 @@ from AnkiVector.modules.helper_funcs.readable_time import get_readable_time
 from AnkiVector.modules.system_stats import bot_sys_stats
 
 
-PM_START_TEXT = """
-HI I am 𝗦𝗛𝗘𝗟𝗔✨ I am a group management bot.
+TEXT = """
+✨*Hey There i am SheLa Bot*
 
- You can manage your group for free from me and many more created by cgs official.
+This bot has a lot of futures An advanced telegram
+Group management Bot For help You Protect Your Groups & Suit For
+& All Your Needs. 🌷
 
-𝙃𝙞𝙩 /help 𝙩𝙤 𝙛𝙞𝙣𝙙 𝙢𝙮 𝙡𝙞𝙨𝙩 𝙤𝙛 𝙖𝙫𝙖𝙞𝙡𝙖𝙗𝙡𝙚 𝙘𝙤𝙢𝙢𝙖𝙣𝙙𝙨 ✨✨
+To know the latest updates on SheLa Bot, join the [Update Channel](https://t.me/CGSUpdates).🌵
+
+*©️ @TheSheLabot ✨*
 """
 
 HELP_STRINGS = f"""
@@ -110,7 +114,7 @@ BUTTONS = [
     ],
 ]
 
-TEXT = """ Hey there! My name is SheLa ✨ - I am powerful group management bot with can help you to manage your groups effectively as possible With   Advanced AI . 
+PM_START_TEXT = """ Hey there! My name is SheLa ✨ - I am powerful group management bot with can help you to manage your groups effectively as possible With   Advanced AI . 
 
 Click `Main menu` button for more information.
 
@@ -443,6 +447,36 @@ def DewmiBot_about_callback(update, context):
                  [
                     InlineKeyboardButton(text="Back", callback_data="aboutmanu_back"),
                  
+                 ]
+                ]
+            ),
+        )
+        
+    elif query.data == "shela_back":
+        query.message.edit_text(
+            text=f"✨*Hey There i am SheLa Bot*
+            f"/n/nThis bot has a lot of futures An advanced telegram. Group management Bot For help You Protect Your Groups & Suit For & All Your Needs. 🌷
+            f"/n/nTo know the latest updates on SheLa Bot, join the [Update Channel](https://t.me/CGSUpdates).🌵
+            f"/n/n*©️ @TheSheLabot *✨
+            parse_mode=ParseMode.MARKDOWN,
+            disable_web_page_preview=True,
+            reply_markup=InlineKeyboardMarkup(
+                [
+                 [
+                    InlineKeyboardButton(text="Main Menu ✨", callback_data="aboutmanu_credit"),
+                 ],
+                 [
+                    InlineKeyboardButton(text=" Bot updates 📢", url=f"https://t.me/cgsupdates"),
+                    InlineKeyboardButton(
+                        text="Support chat 💬", url=f"https://t.me/cgssupport"),
+                 ],
+                 [
+                    InlineKeyboardButton(
+                        text="System Stats", callback_data="stats_callback"),
+                 ],
+                 [
+                    InlineKeyboardButton(
+                        text="📜ADD ME TO YOUR GROUP🗞", url="http://t.me/TheSheLabot?startgroup=true"),
                  ]
                 ]
             ),
