@@ -12,7 +12,7 @@ from google_trans_new import google_translator
 from pyrogram import filters
 
 from AnkiVector import BOT_ID
-from AnkiVector.helper_extra.aichat import add_chat, get_session, remove_chat
+from AnkiVector.utils.aichat import add_chat, get_session, remove_chat
 from AnkiVector.utils.pluginshelper import admins_only, edit_or_reply
 from AnkiVector import pbot as layla
 
