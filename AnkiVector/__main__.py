@@ -91,7 +91,7 @@ buttons = [
     ],
     [
         InlineKeyboardButton(
-            text="➕ Add SheLa To Youre Group ➕", url="t.me/Theshelabot?startgroup=true"
+            text="➕ Add SheLa To Your Group ➕", url="t.me/Theshelabot?startgroup=true"
         ),
     ],
 ]
@@ -305,7 +305,7 @@ def help_button(update, context):
         if mod_match:
             module = mod_match.group(1)
             text = (
-                "*⚊❮❮❮❮ ｢  Help  for  {}  module 」❯❯❯❯⚊*\n".format(
+                " *➣ Help Module For ❬{}❭ *\n".format(
                     HELPABLE[module].__mod_name__
                 )
                 + HELPABLE[module].__help__
