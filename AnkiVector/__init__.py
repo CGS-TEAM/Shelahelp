@@ -25,7 +25,6 @@ from motor.motor_asyncio import AsyncIOMotorClient as Bot
 StartTime = time.time()
 aiohttpsession = aiohttp.ClientSession()
 
-MONGODB_CLI = Bot(MONGO_DB_URI)
 db = MONGODB_CLI.AnkiVector
 
 ### Boot Time
