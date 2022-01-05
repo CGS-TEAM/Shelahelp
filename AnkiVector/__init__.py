@@ -29,10 +29,6 @@ aiohttpsession = aiohttp.ClientSession()
 ### Boot Time
 boottime = time.time()
 
-### Clients
-app = app
-userbot = userbot
-
 
 # enable logging
 logging.basicConfig(
