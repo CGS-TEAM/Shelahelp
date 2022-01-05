@@ -11,8 +11,6 @@ from pyrogram import Client
 from Python_ARQ import ARQ
 
 from aiohttp import ClientSession
-from AnkiVector import MONGO_DB_URI as mango
-from motor.motor_asyncio import AsyncIOMotorClient as Bot
 
 from AnkiVector import ARQ_API_KEY
 
