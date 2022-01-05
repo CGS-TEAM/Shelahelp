@@ -11,7 +11,7 @@ from pyrogram.types import Message
 
 from AnkiVector import BOT_ID, OWNER_ID
 from AnkiVector import pbot as app
-from AnkiVector BOT_USERNAME as MUSIC_BOT_NAME
+from AnkiVector import BOT_USERNAME as MUSIC_BOT_NAME
 from AnkiVector.Database import (add_gban_user, add_off, add_on, add_sudo,
                             get_active_chats, get_served_chats, get_sudoers,
                             is_gbanned_user, remove_active_chat,
