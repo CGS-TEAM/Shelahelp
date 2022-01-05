@@ -24,6 +24,17 @@ from telethon import TelegramClient
 StartTime = time.time()
 aiohttpsession = aiohttp.ClientSession()
 
+MONGODB_CLI = Bot(mango)
+db = MONGODB_CLI.AnkiVector
+
+### Boot Time
+boottime = time.time()
+
+### Clients
+app = app
+userbot = userbot
+
+
 # enable logging
 logging.basicConfig(
     format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
@@ -84,6 +95,7 @@ if ENV:
     PORT = int(os.environ.get("PORT", 5000))
     CERT_PATH = os.environ.get("CERT_PATH")
     API_ID = os.environ.get("API_ID", None)
+    BOT_USERNAME = os.environ.get("BOT_USERNAME", None)
     BOT_ID = os.environ.get("BOT_ID", None)
     SESSION_STRING = os.environ.get("SESSION_STRING", None)
     STRING_SESSION = os.environ.get("STRING_SESSION", None)
