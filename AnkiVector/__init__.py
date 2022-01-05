@@ -19,6 +19,7 @@ import telegram.ext as tg
 from pyrogram import Client, errors
 from telethon import TelegramClient
 from motor.motor_asyncio import AsyncIOMotorClient as Bot
+from AnkiVector.resources import MONGO_CLI
 
 
 
