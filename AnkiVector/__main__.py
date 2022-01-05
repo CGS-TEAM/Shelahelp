@@ -109,6 +109,7 @@ HELP_STRINGS = f"""
     "" if not ALLOW_EXCL else "\nAll commands can either be used with / or !.\n",
 )
 
+SHELAGROUP = "https://telegra.ph/file/cd2eb8977654d7e51484a.jpg"
 
 DONATE_STRING = """Heya, glad to hear you want to donate!
 You can donate to the [sadew rukshan](https://t.me/kmsrk)"""
@@ -231,7 +232,8 @@ def start(update: Update, context: CallbackContext):
                 parse_mode=ParseMode.MARKDOWN,
             )            
     else:
-        update.effective_message.reply_text(
+        update.effective_message.reply_photo(
+            SHELAGROUP,
             "I'm awake already!⚡⚡\n<b>Haven't slept since:</b> <code>{}</code> 🌷".format(
                 uptime
             ),
