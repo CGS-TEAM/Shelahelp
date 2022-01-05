@@ -18,13 +18,14 @@ import spamwatch
 import telegram.ext as tg
 from pyrogram import Client, errors
 from telethon import TelegramClient
+from motor.motor_asyncio import AsyncIOMotorClient as Bot
 
 
 
 StartTime = time.time()
 aiohttpsession = aiohttp.ClientSession()
 
-MONGODB_CLI = Bot(mango)
+MONGODB_CLI = Bot(MONGO_DB_URI)
 db = MONGODB_CLI.AnkiVector
 
 ### Boot Time
