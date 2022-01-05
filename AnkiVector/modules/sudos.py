@@ -4,7 +4,7 @@ import shutil
 import subprocess
 from sys import version as pyver
 
-from config import OWNER_ID
+from AnkiVector import OWNER_ID
 from pyrogram import Client, filters
 from pyrogram.errors import FloodWait
 from pyrogram.types import Message
