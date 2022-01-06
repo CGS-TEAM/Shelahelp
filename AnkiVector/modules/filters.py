@@ -31,7 +31,7 @@ from AnkiVector.modules.helper_funcs.string_handling import (
     markdown_to_html,
     split_quotes,
 )
-from DewmiBot.modules.filters import filter_sql as sql
+from AnkiVector.modules.filters import filter_sql as sql
 
 HANDLER_GROUP = 10
 
