@@ -35,30 +35,6 @@ from AnkiVector.utils.dbfunctions import (add_warn, get_warn, int_to_alpha,
 from AnkiVector.utils.functions import (extract_user, extract_user_and_reason,
                                  time_converter)
 
-__MODULE__ = "Adminss"
-__HELP__ = """/ban - Ban A User
-/dban - Delete the replied message banning its sender
-/tban - Ban A User For Specific Time
-/unban - Unban A User
-/warn - Warn A User
-/dwarn - Delete the replied message warning its sender
-/rmwarns - Remove All Warning of A User
-/warns - Show Warning Of A User
-/kick - Kick A User
-/dkick - Delete the replied message kicking its sender
-/purge - Purge Messages
-/del - Delete Replied Message
-/promote - Promote A Member
-/fullpromote - Promote A Member With All Rights
-/demote - Demote A Member
-/pin - Pin A Message
-/mute - Mute A User
-/tmute - Mute A User For Specific Time
-/unmute - Unmute A User
-/ban_ghosts - Ban Deleted Accounts
-/report | @admins | @admin - Report A Message To Admins."""
-
-
 async def member_permissions(chat_id: int, user_id: int):
     perms = []
     try:
