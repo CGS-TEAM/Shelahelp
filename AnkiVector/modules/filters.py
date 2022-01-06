@@ -27,7 +27,7 @@ from pyrogram import filters
 
 from AnkiVector import app
 from AnkiVector.core.decorators.errors import capture_err
-from AnkiVector.core.decorators.permissions import adminsOnly
+from AnkiVector.core.decorators.permissions import user_admin
 from AnkiVector.core.keyboard import ikb
 from AnkiVector.utils.dbfunctions import (delete_filter, get_filter,
                                    get_filters_names, save_filter)
@@ -47,7 +47,7 @@ Checkout /markdownhelp to know more about formattings and other syntax.
 
 
 @app.on_message(filters.command("filter") & ~filters.edited & ~filters.private)
-@adminsOnly("can_change_info")
+@user_admin("can_change_info")
 async def save_filters(_, message):
     if len(message.command) < 2 or not message.reply_to_message:
         return await message.reply_text(
@@ -93,7 +93,7 @@ async def get_filterss(_, message):
 
 
 @app.on_message(filters.command("stop") & ~filters.edited & ~filters.private)
-@adminsOnly("can_change_info")
+@user_admin("can_change_info")
 async def del_filter(_, message):
     if len(message.command) < 2:
         return await message.reply_text("**Usage:**\n__/stop [FILTER_NAME]__")
