@@ -18,13 +18,17 @@ import spamwatch
 import telegram.ext as tg
 from pyrogram import Client, errors
 from telethon import TelegramClient
-from motor.motor_asyncio import AsyncIOMotorClient as Bot
+from motor.motor_asyncio import AsyncIOMotorClient as MongoClient
 
 
 
 StartTime = time.time()
 aiohttpsession = aiohttp.ClientSession()
 
+# MongoDB client
+print("[INFO]: INITIALIZING DATABASE")
+mongo_client = MongoClient(MONGO_DB_URI)
+db = mongo_client.AnkiVector
 
 ### Boot Time
 boottime = time.time()
