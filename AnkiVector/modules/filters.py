@@ -15,17 +15,17 @@ from telegram.ext import (
 )
 from telegram.utils.helpers import escape_markdown, mention_html
 
-from DewmiBot import DRAGONS, LOGGER, dispatcher
-from DewmiBot.modules.connection import connected
-from DewmiBot.modules.disable import DisableAbleCommandHandler
-from DewmiBot.modules.helper_funcs.alternate import send_message, typing_action
-from DewmiBot.modules.helper_funcs.chat_status import user_admin
-from DewmiBot.modules.helper_funcs.extraction import extract_text
-from DewmiBot.modules.helper_funcs.filters import CustomFilters
-from DewmiBot.modules.helper_funcs.handlers import MessageHandlerChecker
-from DewmiBot.modules.helper_funcs.misc import build_keyboard_parser
-from DewmiBot.modules.helper_funcs.msg_types import get_filter_type
-from DewmiBot.modules.helper_funcs.string_handling import (
+from AnkiVector import DRAGONS, LOGGER, dispatcher
+from AnkiVector.modules.connection import connected
+from AnkiVector.modules.disable import DisableAbleCommandHandler
+from AnkiVector.modules.helper_funcs.alternate import send_message, typing_action
+from AnkiVector.modules.helper_funcs.chat_status import user_admin
+from AnkiVector.modules.helper_funcs.extraction import extract_text
+from AnkiVector.modules.helper_funcs.filters import CustomFilters
+from AnkiVector.modules.helper_funcs.handlers import MessageHandlerChecker
+from AnkiVector.modules.helper_funcs.misc import build_keyboard_parser
+from AnkiVector.modules.helper_funcs.msg_types import get_filter_type
+from AnkiVector.modules.helper_funcs.string_handling import (
     button_markdown_parser,
     escape_invalid_curly_brackets,
     markdown_to_html,
