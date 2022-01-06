@@ -28,7 +28,8 @@ from pyrogram.errors.exceptions.forbidden_403 import ChatWriteForbidden
 from pyrogram.types import Message
 
 from AnkiVector import SUDOERS, app
-from AnkiVector.modules.admin import member_permissions
+from AnkiVector.modules.helper_funcs.chat_status import user_admin
+
 
 
 async def authorised(func, subFunc2, client, message, *args, **kwargs):
@@ -60,7 +61,7 @@ async def unauthorised(message: Message, permission, subFunc2):
     return subFunc2
 
 
-def adminsOnly(permission):
+def user_admin(permission):
     def subFunc(func):
         @wraps(func)
         async def subFunc2(client, message: Message, *args, **kwargs):
