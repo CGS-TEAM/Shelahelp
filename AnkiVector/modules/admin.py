@@ -27,7 +27,7 @@ from pyrogram import filters
 from pyrogram.types import CallbackQuery, ChatPermissions, Message
 
 from AnkiVector import BOT_ID, SUDOERS
-from AnkiVector import pbot as app
+from AnkiVector import app
 from AnkiVector.core.decorators.errors import capture_err
 from AnkiVector.core.keyboard import ikb
 from AnkiVector.utils.dbfunctions import (add_warn, get_warn, int_to_alpha,
