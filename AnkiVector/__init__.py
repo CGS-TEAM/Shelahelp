@@ -25,10 +25,6 @@ from motor.motor_asyncio import AsyncIOMotorClient as MongoClient
 StartTime = time.time()
 aiohttpsession = aiohttp.ClientSession()
 
-# MongoDB client
-print("[INFO]: INITIALIZING DATABASE")
-mongo_client = MongoClient(MONGO_DB_URI)
-db = mongo_client.AnkiVector
 
 ### Boot Time
 boottime = time.time()
