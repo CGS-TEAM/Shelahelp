@@ -202,7 +202,7 @@ else:
     YOUTUBE_API_KEY = Config.YOUTUBE_API_KEY
     INFOPIC = Config.INFOPIC
 
-app = Client("AnkiVector", bot_token=BOT_TOKEN, api_id=API_ID, api_hash=API_HASH)
+app = Client("AnkiVector", bot_token=TOKEN, api_id=API_ID, api_hash=API_HASH)
 ubot2 = TelegramClient(StringSession(STRING_SESSION), API_ID, API_HASH)
 
 try:
