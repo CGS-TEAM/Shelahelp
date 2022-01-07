@@ -10,4 +10,4 @@ __help__ = """
 
 """
 
-__mod_name__ = "Mutes"
+__mod_name__ = "Warns"
