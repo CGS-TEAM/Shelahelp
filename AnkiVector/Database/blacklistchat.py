@@ -1,6 +1,6 @@
 from typing import Dict, List, Union
 
-from AnkiVector import db
+from AnkiVector.utils import db
 
 blacklist_chatdb = db.blacklistChat
 
