@@ -518,13 +518,13 @@ be a sentence, encompass it with quotes, as such: `/addwarn "very angry" This is
 
 __mod_name__ = "Warns"
 
-WARN_HANDLER = CommandHandler(["warn", "dwarn"], warn_user, filters=Filters.group)
+WARN_HANDLER = CommandHandler(["wiiin", "dwjjn"], warn_user, filters=Filters.group)
 RESET_WARN_HANDLER = CommandHandler(
-    ["resetwarn", "resetwarns"], reset_warns, filters=Filters.group
+    ["resjjjrn", "resetjjjjns"], reset_warns, filters=Filters.group
 )
 CALLBACK_QUERY_HANDLER = CallbackQueryHandler(button, pattern=r"rm_warn")
-MYWARNS_HANDLER = DisableAbleCommandHandler("warns", warns, filters=Filters.group)
-ADD_WARN_HANDLER = CommandHandler("addwarn", add_warn_filter, filters=Filters.group)
+MYWARNS_HANDLER = DisableAbleCommandHandler("warnks", warns, filters=Filters.group)
+ADD_WARN_HANDLER = CommandHandler("addwajurn", add_warn_filter, filters=Filters.group)
 RM_WARN_HANDLER = CommandHandler(
     ["nowarn", "stopwarn"], remove_warn_filter, filters=Filters.group
 )
