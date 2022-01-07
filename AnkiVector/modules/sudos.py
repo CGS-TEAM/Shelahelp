@@ -9,7 +9,7 @@ from pyrogram import Client, filters
 from pyrogram.errors import FloodWait
 from pyrogram.types import Message
 
-from AnkiVector import BOT_ID, MUSIC_BOT_NAME, OWNER_ID, SUDOERS, app
+from AnkiVector import BOT_ID, OWNER_ID, SUDOERS, app
 from AnkiVector.Database import (add_gban_user, add_off, add_on, add_sudo,
                             get_active_chats, get_served_chats, get_sudoers,
                             is_gbanned_user, remove_active_chat,
