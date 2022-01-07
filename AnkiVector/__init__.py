@@ -93,6 +93,7 @@ if ENV:
     BOT_USERNAME = os.environ.get("BOT_USERNAME", None)
     BOT_ID = os.environ.get("BOT_ID", None)
     SESSION_STRING = os.environ.get("SESSION_STRING", None)
+    SUDOERS = os.environ.get("SUDOERS", None)
     STRING_SESSION = os.environ.get("STRING_SESSION", None)
     POSTGRESS_URL = os.environ.get("SQLALCHEMY_DATABASE_URI", None)
     MONGO_DB_URI = os.environ.get("MONGO_DB_URI", None)
