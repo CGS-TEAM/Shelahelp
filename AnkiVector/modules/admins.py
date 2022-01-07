@@ -10,4 +10,4 @@ __help__ = """
  
  @TheSheLaBot
 """
-__mod_name__ = "Book"
+__mod_name__ = "Admin"
