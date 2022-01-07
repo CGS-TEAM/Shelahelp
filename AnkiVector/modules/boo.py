@@ -4,4 +4,4 @@ __help__ = """
  
  @TheSheLaBot
 """
-__mod_name__ = "@TheSheLaBot"
+__mod_name__ = "Book"
