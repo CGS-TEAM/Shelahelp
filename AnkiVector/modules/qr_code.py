@@ -24,7 +24,7 @@ from requests import get, post
 from telethon.tl import functions, types
 
 from AnkiVector.events import register
-from SheLaBot import tbot as client
+from AnkiVector import tbot as client
 
 
 def progress(current, total):
