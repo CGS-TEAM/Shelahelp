@@ -410,7 +410,7 @@ def AnkiVector_about_callback(update, context):
                             text="Admins", callback_data="aboutmanu_permis"
                         ),
                         InlineKeyboardButton(
-                            text="Credits", callback_data="hjjj"
+                            text="Credits", url="https://telegra.ph/SHELA-CREDITS-01-09"
                         ),
                     ],
                     [   InlineKeyboardButton(text="Help & Commands🌷", callback_data="help_back"),
