@@ -64,10 +64,6 @@ RUN apt update && apt upgrade -y && \
 # Pypi package Repo upgrade
 RUN pip3 install --upgrade pip setuptools
 
-# Copy Python Requirements to /root/AnkiVector
-RUN git clone -b shiken https://github.com/CGS-TEAM/shelahelp /root/AnkiVector
-WORKDIR /root/AnkiVector
-
 #Copy config file to /root/AnkiVector/AnkiVector
 COPY ./AnkiVector/sample_config.py ./AnkiVector/config.py* /root/AnkiVector/AnkiVector/
 
