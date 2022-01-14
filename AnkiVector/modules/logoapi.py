@@ -46,10 +46,10 @@ async def logo(client, message):
  m = await client.send_message(message.chat.id, "`⚙️ Creating Your logo..`")
  try:
     text = get_text(message)
-    LOGO_API = f"https://api.singledevelopers.net/logo?name={text}"
+    LOGO_API = f"https://api.single-developers.software/logo?name={text}"
     randc = (LOGO_API)
     img = Image.open(io.BytesIO(requests.get(randc).content))
-    murl = requests.get(f"https://api.singledevelopers.net/logo?name={text}").history[1].url
+    murl = requests.get(f"https://api.single-developers.software/logo?name={text}").history[1].url
     fname = "szrosebot.png"
     img.save(fname, "png")
     await client.send_photo(message.chat.id, photo=murl, caption = caption.format(message.from_user.mention),
