@@ -31,7 +31,7 @@ async def write(client, message):
  m = await client.send_message(message.chat.id, "✍️ handwrite started..")
  try:
     text = get_text(message)
-    API = 'https://single-developers.herokuapp.com/write'
+    API = 'https://api.single-developers.software/write'
     body = {     
      "text":f"{text}"     
     }
@@ -60,4 +60,4 @@ async def write(client, message):
           ),
     )
  except Exception as e:
-    await client.send_message(message.chat.id, f'Error, Report @slbotzone, {e}')
+    await client.send_message(message.chat.id, f'Error, Report @CGSSUPPORT, {e}')
