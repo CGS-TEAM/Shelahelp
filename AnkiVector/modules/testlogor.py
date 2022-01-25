@@ -34,7 +34,7 @@ async def hlogo(client, message):
      return
  m = await client.send_message(message.chat.id, "`⚙️ Creating Your logo..`")
  try:
-    text = update.get_text.split(None, 1)[1]
+    text = message.text.split(None, 1)[1]
     req = requests.get(f"https://sd-logo-api.herokuapp.com/?logo={text}")
     IMG = req.text
     texts = get_text(message)
