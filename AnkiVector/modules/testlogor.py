@@ -2,12 +2,11 @@ import os
 import io
 import requests
 from bs4 import *
-from pyrogram import filters	
+from pyrogram import filters, Client
 from PIL import Image
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from AnkiVector import pbot
 from AnkiVector.fsub import ForceSub
-from AnkiVector import pbot
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, InputMediaPhoto
 from requests import get
 from pyrogram.types import Message
@@ -25,7 +24,7 @@ def get_text(message: Message) -> [None, str]:
         return None
 
 @pbot.on_message(filters.command(["hlogo"]))
-async def logo(bot, update):
+async def hlogo(client, message):
  FSub = await ForceSub(client, message)
  if FSub == 400:
         return            
