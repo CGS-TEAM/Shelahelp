@@ -35,12 +35,13 @@ async def hlogo(client, message):
  m = await client.send_message(message.chat.id, "`⚙️ Creating Your logo..`")
  try:
     text = message.text.split(None, 1)[1]
-    req = requests.get(f"https://sd-logo-api.herokuapp.com/?logo={text}")
-    IMG = req.text
+    req = f"https://sd-logo-api.herokuapp.com/?logo={text}")
+    randc = {req}
+    IMG = Image.open(io.BytesIO(requests.get(randc).content))
     texts = get_text(message)
     fname = "shelabot.png"
     img.save(fname, "png")
-    await update.reply_photo(photo=IMG, caption = caption.format(message.from_user.mention)) 
+    await client.send_photo(photo=IMG, caption = caption.format(message.from_user.mention)) 
     if os.path.exists(fname):
             os.remove(fname)
  except Exception as e:
