@@ -34,8 +34,19 @@ async def logo(bot, update):
         name = update.text.split(None, 1)[1]
         req = requests.get(f"https://sd-logo-api.herokuapp.com/?logo={name}")
         IMG = req.text
+        rurl = req.history[1].url
         await m.delete()
-        await update.reply_photo(photo = IMG, caption = caption) 
+        await update.reply_photo(photo = IMG, caption = caption
+                 reply_markup=InlineKeyboardMarkup(
+            [
+                [
+                    InlineKeyboardButton(
+                        "••Telegraph Link••", url=f"{rurl}"
+                    )
+                ]
+            ]
+          ),
+    ) 
     except Exception as e:
         await update.reply_text(f"Error: {e}")
 
