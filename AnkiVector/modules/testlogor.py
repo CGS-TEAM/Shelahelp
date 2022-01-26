@@ -25,11 +25,12 @@ def get_text(message: Message) -> [None, str]:
 
 @pbot.on_message(filters.command(["sdlogo"]))
 async def logo(bot, update):
-        await update.reply_text("⚙️ Creating logo plz wait..")
+    m = await update.reply_text("⚙️ Creating logo plz wait..")
     try:      
         name = update.text.split(None, 1)[1]
         req = requests.get(f"https://sd-logo-api.herokuapp.com/?logo={name}")
         IMG = req.text
+        await m.delete()
         await update.reply_photo(photo = IMG, caption = caption) 
     except Exception as e:
         await update.reply_text(f"Error: {e}")
