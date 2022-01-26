@@ -33,13 +33,13 @@ async def logo(bot, update):
      await client.send_message(message.chat.id, "😶 **Please Give me A Text For The Logo**.")
      return
  m = await client.send_message(message.chat.id, "`⚙️ Creating Your logo..`")
-    try:      
-        name = update.text.split(None, 1)[1]
-        req = requests.get(f"https://sd-logo-api.herokuapp.com/?logo={name}")
-        IMG = req.text
-        await update.reply_photo(messege.chat.id, photo = IMG, caption = caption.format(message.from_user.mention)) 
-    except Exception as e:
-        await update.reply_text(f"Error: {e}")
+ try:      
+    name = update.text.split(None, 1)[1]
+    req = requests.get(f"https://sd-logo-api.herokuapp.com/?logo={name}")
+    IMG = req.text
+    await update.reply_photo(messege.chat.id, photo = IMG, caption = caption.format(message.from_user.mention)) 
+ except Exception as e:
+    await update.reply_text(f"Error: {e}")
 
                      
 caption = """
