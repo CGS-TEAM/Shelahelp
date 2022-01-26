@@ -36,7 +36,7 @@ async def logo(bot, update):
         IMG = req.text
         rurl = req.history[1].url
         await m.delete()
-        await update.reply_photo(photo = IMG, caption = caption
+        await update.reply_photo(photo = IMG, caption = caption,
                     reply_markup=InlineKeyboardMarkup(
             [
                 [
