@@ -23,35 +23,17 @@ def get_text(message: Message) -> [None, str]:
     else:
         return None
 
-@pbot.on_message(filters.command(["hlogo"]))
-async def hlogo(client, message):
- FSub = await ForceSub(client, message)
- if FSub == 400:
-        return            
- quew = get_text(message)
- if not quew:
-     await client.send_message(message.chat.id, "😶 **Please Give me A Text For The Logo**.")
-     return
- m = await client.send_message(message.chat.id, "`⚙️ Creating Your logo..`")
- try:
-    text = message.text.split(None, 1)[1]
-    req = f"https://sd-logo-api.herokuapp.com/?logo={text}"
-    randc = (req)
-    IMG = Image.open(io.BytesIO(requests.get(randc).content))
-    texts = get_text(message)
-    fname = "shelabot.png"
-    img.save(fname, "png")
-    await client.send_photo(photo=IMG, caption = caption.format(message.from_user.mention)) 
-    if os.path.exists(fname):
-            os.remove(fname)
- except Exception as e:
-    await client.send_message(message.chat.id, f'Error, Report @CGSsupport, {e}')
-    await m.delete()
+@pbot.on_message(filters.command(["logo"]))
+async def logo(bot, update):
+    try:      
+        name = update.text.split(None, 1)[1]
+        req = requests.get(f"https://sd-logo-api.herokuapp.com/?logo={name}")
+        IMG = req.text
+        await update.reply_photo(IMG) 
+    except Exception as e:
+        await update.reply_text(f"Error: {e}")
 
-        
-        
-
-      
+                     
 caption = """
 ✍️ Logo Generated Successfully✅
 ◇───────────────◇
