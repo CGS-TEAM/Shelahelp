@@ -24,14 +24,22 @@ def get_text(message: Message) -> [None, str]:
         return None
 
 @pbot.on_message(filters.command(["sdlogo"]))
-async def sdlogo(bot, update):            
-  try:      
-     name = update.text.split(None, 1)[1]
-     req = requests.get(f"https://sd-logo-api.herokuapp.com/?logo={name}")
-     IMG = req.text
-     await update.reply_photo(messege.chat.id, photo = IMG, caption = caption.format(message.from_user.mention)) 
-  except Exception as e:
-     await update.reply_text(f"Error: {e}")
+async def logo(bot, update):
+ FSub = await ForceSub(bot, update)
+ if FSub == 400:
+        return            
+ quew = get_text(update)
+ if not quew:
+     await update.reply_text(message.chat.id, "😶 **Please Give me A Text For The Logo**.")
+     return
+ m = await update.reply_text(message.chat.id, "`⚙️ Creating Your logo..`")
+ try:      
+    name = update.text.split(None, 1)[1]
+    req = requests.get(f"https://sd-logo-api.herokuapp.com/?logo={name}")
+    IMG = req.text
+    await update.reply_photo(photo = IMG, caption = caption.format(message.from_user.mention)) 
+ except Exception as e:
+    await update.reply_text(f"Error: {e}")
 
                      
 caption = """
