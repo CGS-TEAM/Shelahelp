@@ -25,10 +25,10 @@ def get_text(message: Message) -> [None, str]:
 
 @pbot.on_message(filters.command(["sdlogo"]))
 async def logo(bot, update):
- FSub = await ForceSub(client, message)
+ FSub = await ForceSub(bot, update)
  if FSub == 400:
         return            
- quew = get_text(message)
+ quew = get_text(update)
  if not quew:
      await update.reply_text(message.chat.id, "😶 **Please Give me A Text For The Logo**.")
      return
