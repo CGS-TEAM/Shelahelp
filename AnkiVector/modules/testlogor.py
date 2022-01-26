@@ -37,16 +37,16 @@ async def logo(bot, update):
         rurl = req.history[1].url
         await m.delete()
         await update.reply_photo(photo = IMG, caption = caption
-                 reply_markup=InlineKeyboardMarkup(
+                    reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
                         "••Telegraph Link••", url=f"{rurl}"
                     )
-                ]
+                ],
             ]
           ),
-    ) 
+    )
     except Exception as e:
         await update.reply_text(f"Error: {e}")
 
