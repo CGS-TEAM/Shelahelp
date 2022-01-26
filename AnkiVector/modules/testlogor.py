@@ -23,7 +23,7 @@ def get_text(message: Message) -> [None, str]:
     else:
         return None
 
-@pbot.on_message(filters.command(["logo"]))
+@pbot.on_message(filters.command(["sdlogo"]))
 async def logo(bot, update):
     try:      
         name = update.text.split(None, 1)[1]
