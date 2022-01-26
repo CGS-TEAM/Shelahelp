@@ -29,7 +29,7 @@ async def logo(bot, update):
         name = update.text.split(None, 1)[1]
         req = requests.get(f"https://sd-logo-api.herokuapp.com/?logo={name}")
         IMG = req.text
-        await update.reply_photo(photo = IMG, caption = caption) 
+        await update.reply_photo(message.chat.id, photo = IMG, caption = caption) 
     except Exception as e:
         await update.reply_text(f"Error: {e}")
 
