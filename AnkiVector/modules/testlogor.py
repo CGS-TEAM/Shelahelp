@@ -30,9 +30,9 @@ async def logo(bot, update):
         return            
  quew = get_text(message)
  if not quew:
-     await client.send_message(message.chat.id, "😶 **Please Give me A Text For The Logo**.")
+     await update.reply_text(message.chat.id, "😶 **Please Give me A Text For The Logo**.")
      return
- m = await client.send_message(message.chat.id, "`⚙️ Creating Your logo..`")
+ m = await update.reply_text(message.chat.id, "`⚙️ Creating Your logo..`")
  try:      
     name = update.text.split(None, 1)[1]
     req = requests.get(f"https://sd-logo-api.herokuapp.com/?logo={name}")
