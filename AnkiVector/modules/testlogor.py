@@ -27,7 +27,7 @@ def get_text(message: Message) -> [None, str]:
 async def logo(bot, update):
     FSub = await ForceSub(bot, update)
     if FSub == 400:
-    return
+           return
     quew = get_text(update)
     if not quew:
         await update.reply_text(message.chat.id, "😶Please give a text handwrite.")
