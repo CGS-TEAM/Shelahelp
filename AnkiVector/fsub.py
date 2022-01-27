@@ -31,13 +31,17 @@ async def ForceSub(bot: Client, event: Message):
     except UserNotParticipant:
         await bot.send_message(
             chat_id=event.chat.id,
-            text="""⛔️ Access Denied ⛔️
-            🙋‍♂️ Hey There {}, You Must Join @CGSUpdates Telegram Channel To Use This BOT. So, Please Join it & Try Again🤗. Thank You 🤝
+            text=""" 
+            *{} NOT JOINED UPDATE CHANNEL *☹️
+
+            🪴[Join update channel](https://t.me/CGSUPDATES) to click button below☘ Then try again.🍃
+
+            💐Thanks for SheLa Users🌺
             """.format(event.from_user.mention),
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton("Join  Channel 🔔", url=invite_link.invite_link)
+                        InlineKeyboardButton("🍀 Join  Channel 🍀", url=invite_link.invite_link)
                     ]
                 ]
             ),
