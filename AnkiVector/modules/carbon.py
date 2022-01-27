@@ -7,7 +7,7 @@ from AnkiVector import pbot
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, InputMediaPhoto
 from requests import get
 from pyrogram.types import Message
-from pyrogram import filters
+from pyrogram import filters, Client
 from io import BytesIO
 from AnkiVector import aiohttpsession as session
 from AnkiVector.fsub import ForceSub
