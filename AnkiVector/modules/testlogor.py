@@ -34,13 +34,14 @@ async def logo(bot, update):
         name = update.text.split(None, 1)[1]
         req = requests.get(f"https://sd-logo-api.herokuapp.com/?logo={name}")
         IMG = req.text
+        rurl = requests.get(f"https://sd-logo-api.herokuapp.com/?logo={name}").text
         await m.delete()
         await update.reply_photo(photo = IMG, caption = caption,
                     reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        ".....", callback_data=f"picme"
+                        "🍀 Telegraph Link 🍀", url=f"{rurl}"
                     )
                 ],
             ]
