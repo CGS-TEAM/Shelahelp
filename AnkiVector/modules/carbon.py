@@ -1,7 +1,15 @@
+import os
+import io
+import requests
+from bs4 import *	
+from PIL import Image
+from AnkiVector import pbot
+from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, InputMediaPhoto
+from requests import get
+from pyrogram.types import Message
 from pyrogram import filters
 from io import BytesIO
-from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
-from AnkiVector import pbot, aiohttpsession as session
+from AnkiVector import aiohttpsession as session
 from AnkiVector.fsub import ForceSub
 
 def get_text(message: Message) -> [None, str]:
