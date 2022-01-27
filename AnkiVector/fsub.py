@@ -36,7 +36,7 @@ async def ForceSub(bot: Client, event: Message):
 
 🪴[Join update channel](https://t.me/CGSUPDATES) to click button below☘ Then try again.🍃
 
-💐Thanks for SheLa Users🌺
+💐 {} Thanks for [SheLa](https://t.me/THESHELABOT) use🌺
             """.format(event.from_user.mention),
             reply_markup=InlineKeyboardMarkup(
                 [
