@@ -31,7 +31,7 @@ async def make_carbon(code):
     image.name = "carbon.png"
     return image
 
-text = get_text(message)
+name = update.text.split(None, 1)[1]
 BUTTON = InlineKeyboardMarkup(
       [
         [
@@ -62,7 +62,7 @@ async def carbon_func(client, message):
     if not message.reply_text:
         return await message.reply_text("Reply to a text message.")
     m = await message.reply_text("⚙️ Please wait creating carbon..")
-    carbon = await make_carbon.text
+    carbon = await make_carbon, {name}
     await m.edit("Uploading")
     await client.send_photo(message.chat.id, carbon,caption=TEXT,reply_markup= BUTTON)
     await m.delete()
