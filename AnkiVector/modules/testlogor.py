@@ -40,7 +40,7 @@ async def logo(bot, update):
             [
                 [
                     InlineKeyboardButton(
-                        ".....", url=f"https://t.me/cgaupdates"
+                        ".....", callback_data=f"picme"
                     )
                 ],
             ]
