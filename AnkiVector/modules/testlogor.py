@@ -25,6 +25,8 @@ def get_text(message: Message) -> [None, str]:
 
 @pbot.on_message(filters.command(["sdlogo"]))
 async def logo(bot, update):
+    FSub = await ForceSub(client, message)
+    if FSub == 400:
     quew = get_text(update)
     if not quew:
         await update.reply_text(message.chat.id, "😶Please give a text handwrite.")
