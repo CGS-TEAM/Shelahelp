@@ -32,11 +32,11 @@ async def ForceSub(bot: Client, event: Message):
         await bot.send_message(
             chat_id=event.chat.id,
             text=""" 
-            *{} NOT JOINED UPDATE CHANNEL *☹️
+            ** {} NOT JOINED UPDATE CHANNEL **☹️
 
-            🪴[Join update channel](https://t.me/CGSUPDATES) to click button below☘ Then try again.🍃
+🪴[Join update channel](https://t.me/CGSUPDATES) to click button below☘ Then try again.🍃
 
-            💐Thanks for SheLa Users🌺
+💐Thanks for SheLa Users🌺
             """.format(event.from_user.mention),
             reply_markup=InlineKeyboardMarkup(
                 [
