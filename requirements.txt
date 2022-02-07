@@ -81,4 +81,6 @@ parsel
 faker
 loguru
 envparse
-cv2
+NumPy
+glitch_this
+opencv-python-headless
