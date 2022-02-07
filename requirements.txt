@@ -81,3 +81,4 @@ parsel
 faker
 loguru
 envparse
+cv2
