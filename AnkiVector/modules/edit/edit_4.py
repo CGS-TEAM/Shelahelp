@@ -9,7 +9,7 @@ import os
 
 
 if bool(os.environ.get("WEBHOOK", False)):
-    from sample_config import Config  # pylint:disable=import-error
+    from sconfig import Config  # pylint:disable=import-error
 else:
     from AnkiVector.config import Config  # pylint:disable=import-error
 
