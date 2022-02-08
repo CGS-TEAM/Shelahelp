@@ -1,10 +1,10 @@
 # By @TroJanzHEX
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, Message
 from pyrogram import Client, filters
+from AnkiVector import pbot
 
-
-@Client.on_message(filters.photo & filters.command("edit"))
-async def photo(client: Client, message: Message):
+@pbot.on_message(filters.command("saavn") & ~filters.edited)
+async def edit(client: Client, message: Message):
     try:
         await client.send_message(
             chat_id=message.chat.id,
