@@ -11,7 +11,7 @@ import os
 if bool(os.environ.get("WEBHOOK", False)):
     from sample_config import Config  # pylint:disable=import-error
 else:
-    from config import Config  # pylint:disable=import-error
+    from AnkiVector.config import Config  # pylint:disable=import-error
 
 
 async def rotate_90(client, message):
