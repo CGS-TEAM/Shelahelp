@@ -37,7 +37,7 @@ async def take_ss(_, message: Message):
         await m.edit("**Uploading**")
         try:
             await message.reply_photo(
-                photo=f"https://webshot.amanoteam.com/print?q={url}",
+                photo=f"https://shot.screenshotapi.net/screenshot?&url={url}&output=image&file_type=png&wait_for_event=load",
                 quote=False,
             )
         except TypeError:
