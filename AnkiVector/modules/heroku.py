@@ -7,6 +7,8 @@ import requests
 
 from AnkiVector import telethn as borg, HEROKU_APP_NAME, HEROKU_API_KEY, OWNER_ID
 from AnkiVector.events import register
+from AnkiVector.utils.heroku_helper import HerokuHelper
+
 
 heroku_api = "https://api.heroku.com"
 Heroku = heroku3.from_key(HEROKU_API_KEY)
