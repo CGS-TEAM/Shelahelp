@@ -1,6 +1,7 @@
 import asyncio
 import math
 import os
+import sys
 
 import heroku3
 import requests
@@ -8,7 +9,6 @@ import requests
 from AnkiVector import telethn as borg, HEROKU_APP_NAME, HEROKU_API_KEY, OWNER_ID
 from AnkiVector.events import register
 from AnkiVector.utils.heroku_helper import HerokuHelper
-
 
 heroku_api = "https://api.heroku.com"
 Heroku = heroku3.from_key(HEROKU_API_KEY)
@@ -81,14 +81,16 @@ async def variable(var):
                 return await s.edit(">`/set var <ConfigVars-name> <value>`")
         await asyncio.sleep(1.5)
         if variable in heroku_var:
-            await s.edit(f"**{variable}**  `successfully changed to`  ->  **{value}**")
+            await s.edit(
+                f"**{variable}**  `successfully changed to`  ->  **{value}**"
+            )
         else:
             await s.edit(
                 f"**{variable}**  `successfully added with value`  ->  **{value}**"
             )
         heroku_var[variable] = value
     elif exe == "del":
-        m = await var.reply("`Getting information to deleting variable...`")
+        m = await var.edit("`Getting information to deleting variable...`")
         try:
             variable = var.pattern_match.group(2).split()[0]
         except IndexError:
@@ -112,7 +114,7 @@ async def dyno_usage(dyno):
     """
     Get your account Dyno Usage
     """
-    die = await dyno.reply("`Processing...`")
+    die = await dyno.reply("**Processing...**")
     useragent = (
         "Mozilla/5.0 (Linux; Android 10; SM-G975F) "
         "AppleWebKit/537.36 (KHTML, like Gecko) "
@@ -127,7 +129,9 @@ async def dyno_usage(dyno):
     path = "/accounts/" + user_id + "/actions/get-quota"
     r = requests.get(heroku_api + path, headers=headers)
     if r.status_code != 200:
-        return await die.edit("`Error: something bad happened`\n\n" f">.`{r.reason}`\n")
+        return await die.edit(
+            "`Error: something bad happened`\n\n" f">.`{r.reason}`\n"
+        )
     result = r.json()
     quota = result["account_quota"]
     quota_used = result["quota_used"]
@@ -138,7 +142,6 @@ async def dyno_usage(dyno):
     minutes_remaining = remaining_quota / 60
     hours = math.floor(minutes_remaining / 60)
     minutes = math.floor(minutes_remaining % 60)
-    day = math.floor(hours / 24)
 
     """ - Current - """
     App = result["apps"]
@@ -152,21 +155,64 @@ async def dyno_usage(dyno):
         AppPercentage = math.floor(App[0]["quota_used"] * 100 / quota)
     AppHours = math.floor(AppQuotaUsed / 60)
     AppMinutes = math.floor(AppQuotaUsed % 60)
+
     await asyncio.sleep(1.5)
 
     return await die.edit(
-        "❂ **Dyno Usage **:\n\n"
-        f" » Dyno usage for **{HEROKU_APP_NAME}**:\n"
-        f"      •  `{AppHours}`**h**  `{AppMinutes}`**m**  "
+        "**Dyno Usage 📊**:\n\n"
+        f" -> `Dyno usage for`  **Rose bot **:\n"
+        f"     •  `{AppHours}`**h**  `{AppMinutes}`**m**  "
         f"**|**  [`{AppPercentage}`**%**]"
         "\n\n"
-        "  » Dyno hours quota remaining this month:\n"
-        f"      •  `{hours}`**h**  `{minutes}`**m**  "
+        " -> `Dyno hours quota remaining this month`:\n"
+        f"     •  `{hours}`**h**  `{minutes}`**m**  "
         f"**|**  [`{percentage}`**%**]"
-        f"\n\n  » Dynos heroku {day} days left"
     )
 
+@register(pattern="^/restart$")
+async def restart_bot(dyno):
+    if dyno.fwd_from:
+        return
+    if dyno.sender_id == OWNER_ID:
+        pass
+    else:
+        return await dyno.reply("Rosebot will be restarted..."
+         )
+    args = [sys.executable, "-m", "DewmiBot"]
+    os.execl(sys.executable, *args)
 
+@register(pattern="^/update$")
+async def upgrade(dyno):
+    if dyno.fwd_from:
+        return
+    if dyno.sender_id == OWNER_ID:
+        pass
+    else:
+        return await dyno.reply(
+            "`Checking for updates, please wait....`"
+        )
+    m = await dyno.reply("**Your bot is being deployed, please wait for it to complete.\nIt may take upto 5 minutes **")
+    proc = await asyncio.create_subprocess_shell(
+        "git pull --no-edit",
+        stdout=asyncio.subprocess.PIPE,
+        stderr=asyncio.subprocess.STDOUT,
+    )
+    stdout = (await proc.communicate())[0]
+    if proc.returncode == 0:
+        if "Already up to date." in stdout.decode():
+            await m.edit_text("There's nothing to upgrade.")
+        else:
+            await m.edit_text("Restarting...")
+            args = [sys.executable, "-m", "DewmiBot"]
+            os.execl(sys.executable, *args)
+    else:
+        await m.edit_text(
+            f"Upgrade failed (process exited with {proc.returncode}):\n{stdout.decode()}"
+        )
+        proc = await asyncio.create_subprocess_shell("git merge --abort")
+        await proc.communicate()
+        
+        
 @register(pattern="^/logs$")
 async def _(dyno):
     if dyno.fwd_from:
@@ -190,7 +236,7 @@ async def _(dyno):
         dyno.chat_id,
         "logs.txt",
         reply_to=dyno.id,
-        caption="Shela logs.",
+        caption=" Bot Logz.",
     )
 
     await asyncio.sleep(5)
